@@ -1,4 +1,4 @@
-const randomJoke = async () => {
+const JokeData = async () => {
   const response = await fetch('https://icanhazdadjoke.com/', {
 		headers: {
 			'Accept': 'application/json'}
@@ -12,4 +12,9 @@ const showJoke = (data) => {
 	text.innerHTML = data
 }
 
-export default randomJoke
+const generateRandomJoke = () => {
+	const btn = document.getElementById('randomJokeBtn');
+	btn.addEventListener('click', JokeData)
+}
+
+export default generateRandomJoke()

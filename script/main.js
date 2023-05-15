@@ -1,8 +1,5 @@
-import RandomJoke from "./modules/RandomJoke.js";
+import generateRandomJoke from "./modules/RandomJoke.js";
+import searchJoke from "./modules/SearchJoke.js";
 
-const generateRandomJoke = () => {
-	const btn = document.getElementById('randomJokeBtn');
-	btn.addEventListener('click', RandomJoke)
-}
-
-generateRandomJoke()
+generateRandomJoke
+searchJoke
