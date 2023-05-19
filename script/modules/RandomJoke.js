@@ -1,20 +1,19 @@
-const JokeData = async () => {
-  const response = await fetch('https://icanhazdadjoke.com/', {
-    headers: {
-      'Accept': 'application/json'}
-  });
-  const data = await response.json()
-  showJoke(data.joke)
-}
+import {randomJoke} from "./JokesApi.js";
 
 const showJoke = (data) => {
-  const text = document.getElementById('randomJoke');
-  text.innerHTML = data
-}
+  const container = document.getElementById('randomJoke-container');
+  container.insertAdjacentHTML(
+    "afterbegin",
+    `<a href="./product/product.html?id=${data.id}" class="joke-text">${data.joke}</a>`
+  )
+};
 
 const generateRandomJoke = () => {
   const btn = document.getElementById('randomJokeBtn');
-  btn.addEventListener('click', JokeData)
-}
+  btn.addEventListener('click', async () => {
+    const joke = await randomJoke();
+    showJoke(joke);
+  });
+};
 
-export default generateRandomJoke()
+export default generateRandomJoke;
