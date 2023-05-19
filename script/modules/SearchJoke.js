@@ -5,7 +5,6 @@ const inputValue = async () => {
   const result = await searchJoke(input)
   !input ? null : generateJokes(result) // if there is no word, it prevents calling all jokes from API
   document.getElementById("searchJoke").value = ""; // erase word from input
-  console.log(result)
 };
 
 const generateJokes = (data) => {

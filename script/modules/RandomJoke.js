@@ -1,10 +1,11 @@
 import {randomJoke} from "./JokesApi.js";
 
-const showJoke = (data) => {
+const showJoke = ({id, joke}) => {
   const container = document.getElementById('randomJoke-container');
+  container.innerHTML = ''
   container.insertAdjacentHTML(
     "afterbegin",
-    `<a href="./product/product.html?id=${data.id}" class="joke-text">${data.joke}</a>`
+    `<a href="./product/product.html?id=${id}" class="joke-text">${joke}</a>`
   )
 };
 
