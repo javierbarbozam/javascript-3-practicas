@@ -1,0 +1,124 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+span {
+	font-weight: 700;
+}
+
+.joke-product-info {
+	height: 100vh;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 auto ;
+	padding: 0 30px;
+}
+
+.current-product-info {
+	width: 45%;
+}
+
+#current-product {
+	height: 80vh;
+	width: 50%;
+	overflow: hidden;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	position: relative;
+}
+
+#current-product img {
+	width: 100%;
+	aspect-ratio: 1/1;
+	object-fit: contain;
+}
+
+#product-title {
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+
+#product-title::first-letter{
+	text-transform: uppercase;
+}
+
+#product-form {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	margin-top: 10px;
+}
+
+.joke-product-item {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.joke-product-item input {
+	visibility: hidden;
+	position: absolute;
+	height: 1px;
+	width: 1px;
+}
+
+.joke-product-item img {
+	width: 100%;
+	aspect-ratio: 1/1;
+	object-fit: cover;
+	object-position: top;
+}
+
+.product-joke {
+	margin: 20px 0;
+}
+
+.product-list {
+	margin: 20px 0;
+}
+
+.product-color {
+	width: 25px;
+	height: 25px;
+}
+
+.color-form {
+	display: flex;
+	align-items: center;
+}
+
+.current-joke {
+	position: absolute;
+	text-align: center;
+}
+
+.current-joke-shirt {
+	top: 220px;
+	left: 130px;
+	width: 100px;
+}
+
+.current-joke-case {
+	font-size: 20px;
+	top: 250px;
+	left: 295px;
+	width: 100px;
+}
+
+.current-joke-pillow {
+	font-size: 20px;
+	top: 280px;
+	left: 250px;
+	width: 200px;
+}
+
+.current-joke-poster {
+	font-size: 20px;
+	top: 250px;
+	left: 295px;
+	width: 100px;
+}

@@ -1,12 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-</head>
-<body>
-	
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/product.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <title>Dad Jokes Merch</title>
+  </head>
+  <body>
+    <div class="joke-product-info">
+      <div id="current-product">
+        <p class="current-joke current-joke-shirt" id="current-product-joke"></p>
+        <img id="current-product-img" src="" alt="">
+      </div>
+      <div class="current-product-info">
+        <div id="product-info">
+          <h1 id="product-title"></h1>
+          <span id="product-price"></span>
+          <form class="color-form" action="post">
+            <span>Choose a color:</span>
+            <label
+              >white<input class="product-color" type="radio" name="product-color" id="white" checked
+            /></label>
+            <label
+              >black<input class="product-color" type="radio" name="product-color" id="black"
+            /></label>
+          </form>
+          <div class="product-joke">
+            <span>Joke:</span>
+            <p id="joke-preview"></p>
+          </div>
+        </div>
+        <div class="jokes-container">
+          <div id="randomJoke-container"></div>
+          <button class="joke-btn" id="randomJokeBtn">Get another joke!</button>
+        </div>
+        <div class="product-list">
+          <span>Choose another product:</span>
+          <form id="product-form" action=""></form>
+        </div>
+      </div>
+    </div>
+    <script src="../script/product.js" type="module" defer></script>
+  </body>
 </html>

@@ -18,4 +18,14 @@ const searchJoke = async (keyWord) => {
   return data.results
 }
 
-export {randomJoke, searchJoke};
+const specificJoke = async (jokeId) => {
+  const response = await fetch(`https://icanhazdadjoke.com/j/${jokeId}`, {
+      headers: {
+        'Accept': 'application/json'
+      }
+  });
+  const data = await response.json()
+  return data.joke
+}
+
+export {randomJoke, searchJoke, specificJoke};
