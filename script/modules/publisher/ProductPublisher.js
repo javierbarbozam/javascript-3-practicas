@@ -4,7 +4,7 @@ import { visualizerProduct } from "../subscriber/Visualizer.js";
 import { jokeProduct } from "../subscriber/Joke.js";
 import { PriceProduct } from "../subscriber/Price.js";
 
-const selectProduct = new Publisher;
+const selectProduct = new Publisher();
 
 selectProduct.subscribe(titleProduct)
 selectProduct.subscribe(visualizerProduct)

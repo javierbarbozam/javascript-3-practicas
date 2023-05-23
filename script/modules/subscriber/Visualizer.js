@@ -13,7 +13,7 @@ const visualizerMenu = () => {
 const visualizerCurrent = () => {
   const image = document.getElementById("current-product-img");
   const { item, color } = chosenMerch;
-  image.setAttribute("src", `../../img/product-${item}-${color}.jpg`);
+  image.setAttribute("src", `../img/product-${item}-${color}.jpg`);
   image.setAttribute("alt", `${color} ${item}`);
 };
 visualizerCurrent();
