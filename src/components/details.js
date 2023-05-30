@@ -7,13 +7,15 @@ const price = document.getElementById("product-price");
 
 const handleColorChange = (value) => {
   chosenMerch.color = value;
-  title.innerHTML = `${chosenMerch.color} ${chosenMerch.item}`;
+  chosenMerch.price = merch [chosenMerch.item] [chosenMerch.color]
+  title.innerHTML = `${chosenMerch.color} ${chosenMerch.item} with joke`;
   price.innerHTML = `${merch[chosenMerch.item][chosenMerch.color]}`;
 };
 
 const handleProductChange = (value) => {
   chosenMerch.item = value;
-  title.innerHTML = `${chosenMerch.color} ${chosenMerch.item}`;
+  chosenMerch.price = merch [chosenMerch.item] [chosenMerch.color]
+  title.innerHTML = `${chosenMerch.color} ${chosenMerch.item} with joke`;
   price.innerHTML = `${merch[chosenMerch.item][chosenMerch.color]}`;
 };
 

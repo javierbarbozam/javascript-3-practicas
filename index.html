@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./styles/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
   <title>Document</title>
 </head>
 <body>
@@ -22,6 +23,18 @@
       <div id="searchJokeContainer"></div>
     </div>
   </div>
-  <script src="./src/main.js" type="module" defer></script>
+  <div id="cart-wrapper" class="cart-wrapper">
+    <button class="cart-panel-btn" id="cart-panel-btn">
+      <i class="material-icons cart-icon-open">shopping_cart</i>
+      <i class="material-icons cart-icon-close">close</i>
+    </button>
+    <div class="cart" id="cart">
+      <span class="cart-title">Cart</span>
+      <div id="cart-item-wrapper">
+      </div>
+      <button id="remove-all-cart">Remove all</button>
+    </div>
+  </div>
+  <script src="./src/pages/homePage/main.js" type="module" defer></script>
 </body>
 </html>

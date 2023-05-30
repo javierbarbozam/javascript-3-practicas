@@ -4,44 +4,58 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/product.css">
-    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/product.css" />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
     <title>Dad Jokes Merch</title>
   </head>
   <body>
-    <div class="joke-product-info">
-      <div id="current-product">
-        <p class="current-joke current-joke-shirt" id="current-joke"></p>
-        <img id="current-product-img" src="" alt="">
-      </div>
-      <div class="current-product-info">
-        <div id="product-info">
-          <h1 id="product-title"></h1>
-          <p id="product-price"></p>
-          <form class="color-form" action="post">
-            <span>Choose a color:</span>
-            <label
-              >white<input class="product-color" type="radio" name="product-color" id="white" checked
-            /></label>
-            <label
-              >black<input class="product-color" type="radio" name="product-color" id="black"
-            /></label>
-          </form>
-          <div class="product-joke">
-            <span>Joke:</span>
-            <p id="joke-preview"></p>
+    <div class="wrapper">
+      <div class="joke-product-info">
+        <div id="current-product">
+          <p class="current-joke current-joke-shirt" id="current-joke"></p>
+          <img id="current-product-img" src="" alt="" />
+        </div>
+        <div class="current-product-info">
+          <div id="product-info">
+            <h1 id="product-title"></h1>
+            <p id="product-price"></p>
+            <button id="add-product">Add to Cart</button>
+            <form class="color-form" action="post">
+              <span>Choose a color:</span>
+              <label>white<input class="product-color" type="radio" name="product-color" id="white" checked/></label>
+              <label>black<input class="product-color" type="radio" name="product-color" id="black"/></label>
+            </form>
+            <div class="product-joke">
+              <span>Joke:</span>
+              <p id="joke-preview"></p>
+            </div>
+          </div>
+          <div class="jokes-container">
+            <div id="randomJoke-container"></div>
+            <button class="joke-btn" id="randomJokeBtn">
+              Get another joke!
+            </button>
+          </div>
+          <div class="product-list">
+            <span>Choose another product:</span>
+            <form id="product-form" action=""></form>
           </div>
         </div>
-        <div class="jokes-container">
-          <div id="randomJoke-container"></div>
-          <button class="joke-btn" id="randomJokeBtn">Get another joke!</button>
-        </div>
-        <div class="product-list">
-          <span>Choose another product:</span>
-          <form id="product-form" action=""></form>
+      </div>
+      <div id="cart-wrapper" class="cart-wrapper">
+        <button class="cart-panel-btn" id="cart-panel-btn">
+          <i class="material-icons cart-icon-open">shopping_cart</i>
+          <i class="material-icons cart-icon-close">close</i>
+        </button>
+        <div class="cart" id="cart">
+          <span class="cart-title">Cart</span>
+          <div id="cart-item-wrapper">
+          </div>
+          <button id="remove-all-cart">Remove all</button>
         </div>
       </div>
     </div>
-    <script src="../src/product.js" type="module" defer></script>
+    <script src="../src/pages/product/product.js" type="module" defer></script>
   </body>
 </html>

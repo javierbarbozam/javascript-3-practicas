@@ -20,6 +20,7 @@ const merch = {
 const chosenMerch = {
   color: "white",
   item: "shirt",
+  price: "$10",
   jokeData: {
     joke: "",
     color: "black",
