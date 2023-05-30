@@ -1,4 +1,4 @@
-import {randomJoke} from "./JokesApi.js";
+import {randomJoke} from "./jokes-api.js";
 
 const showJoke = ({id, joke}) => {
   const container = document.getElementById('randomJoke-container');

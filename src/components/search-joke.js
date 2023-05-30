@@ -1,4 +1,4 @@
-import { searchJoke } from "./JokesApi.js";
+import { searchJoke } from "./jokes-api.js";
 
 const inputValue = async () => {
   const input = document.getElementById("searchJoke").value;
