@@ -13,3 +13,9 @@ initDetails();
 initJokePreview();
 generateRandomJoke(); // not done yet
 initCart();
+
+import { prueba } from "../../components/localStorage/LocalStorage.js";
+import { chosenMerch } from "../../config.js";
+
+prueba.saveData()
+prueba.getData()

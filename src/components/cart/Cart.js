@@ -7,11 +7,12 @@ class Cart {
     this.products.push(product);
   }
 
-  // removeProduct(id) {
-  //   this.products = this.products.filter((element) => {
-  //     element.id !== id;
-  //   });
-  // }
+  removeProduct(id) {
+    debugger;
+    this.products = this.products.filter((element) => {
+      element.id !== Number(id);
+    });
+  }
 
   removeAll() {
     this.products = [];
@@ -25,10 +26,6 @@ class CartItem {
     this.color = color;
     this.price = price;
     this.joke = joke;
-  }
-
-  getId() {
-    return this.id
   }
 }
 

@@ -26,7 +26,7 @@ const addProduct = () => {
     const cartContainer = document.getElementById("cart-wrapper");
     cartContainer.classList.contains("cart-open")
       ? null
-      : cartContainer.classList.toggle('cart-open');
+      : cartContainer.classList.toggle("cart-open");
   });
 };
 
@@ -45,6 +45,7 @@ const removeOneProduct = () => {
   );
   removeBtn.forEach((element) =>
     element.addEventListener("click", (event) => {
+      // cart.removeProduct(event.currentTarget.value)
       cart.products = cart.products.filter(
         (item) => item.id !== parseInt(event.currentTarget.value)
       );
@@ -76,12 +77,7 @@ const generateCart = () => {
   );
   container.insertAdjacentHTML("afterbegin", productContainer);
   removeOneProduct();
+  removeAllProduct();
 };
 
-export { 
-  addProduct, 
-  removeAllProduct, 
-  removeOneProduct,
-  handleCartDisplay,
-  generateCart 
-};
+export { addProduct, handleCartDisplay, generateCart };
