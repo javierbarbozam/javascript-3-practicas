@@ -1,10 +1,12 @@
-import { Cart, CartItem } from "./Cart.js";
+import { CartItem } from "./Cart.js";
 import { chosenMerch } from "../../config.js";
+import SaveDataLocal from "../localStorage/LocalStorage.js";
 
 // idProduct created in order to delete an specific item
 // Every time AddProduct is clicked, the id count increases for next item
 
-const cart = new Cart();
+const cartProducts = new SaveDataLocal('cartProducts');
+
 let idProduct = 0;
 
 const addProduct = () => {
@@ -19,7 +21,7 @@ const addProduct = () => {
       chosenMerch.jokeData.joke
     );
     idProduct++;
-    cart.setProduct(product);
+    cartProducts.setProduct(product);
     generateCart();
 
     // open cart
@@ -34,8 +36,9 @@ const removeAllProduct = () => {
   const removeAllBtn = document.getElementById("remove-all-cart");
   removeAllBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    cart.removeAll();
-    generateCart();
+    cartProducts.deleteData()
+    document.getElementById("cart-item-wrapper").innerHTML ='';
+    document.getElementById("cart-wrapper").classList.remove("cart-open");
   });
 };
 
@@ -45,10 +48,7 @@ const removeOneProduct = () => {
   );
   removeBtn.forEach((element) =>
     element.addEventListener("click", (event) => {
-      // cart.removeProduct(event.currentTarget.value)
-      cart.products = cart.products.filter(
-        (item) => item.id !== parseInt(event.currentTarget.value)
-      );
+      cartProducts.deleteProduct(event.currentTarget.value)
       generateCart();
     })
   );
@@ -59,6 +59,9 @@ const handleCartDisplay = () => {
   const cartContainer = document.getElementById("cart-wrapper");
   cartBtn.addEventListener("click", () => {
     cartContainer.classList.toggle("cart-open");
+    cartContainer.classList.contains("cart-open")
+      ? generateCart()
+      : null
   });
 };
 
@@ -66,7 +69,8 @@ const generateCart = () => {
   const container = document.getElementById("cart-item-wrapper");
   container.innerHTML = "";
   let productContainer = "";
-  cart.products.forEach(
+  const products = cartProducts.getData()
+  products.forEach(
     (element) =>
       (productContainer += `<div class="cart-item">
         <span class="cart-item__title">${element.color} ${element.product} with joke</span>

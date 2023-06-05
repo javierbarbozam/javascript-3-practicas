@@ -11,11 +11,5 @@ initColorChange();
 initProductList();
 initDetails();
 initJokePreview();
-generateRandomJoke(); // not done yet
+generateRandomJoke();
 initCart();
-
-import { prueba } from "../../components/localStorage/LocalStorage.js";
-import { chosenMerch } from "../../config.js";
-
-prueba.saveData()
-prueba.getData()

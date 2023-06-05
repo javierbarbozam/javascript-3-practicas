@@ -1,24 +1,3 @@
-class Cart {
-  constructor() {
-    this.products = [];
-  }
-
-  setProduct(product) {
-    this.products.push(product);
-  }
-
-  removeProduct(id) {
-    debugger;
-    this.products = this.products.filter((element) => {
-      element.id !== Number(id);
-    });
-  }
-
-  removeAll() {
-    this.products = [];
-  }
-}
-
 class CartItem {
   constructor(id, product, color, price, joke) {
     this.id = id;
@@ -29,4 +8,4 @@ class CartItem {
   }
 }
 
-export { Cart, CartItem };
+export { CartItem };

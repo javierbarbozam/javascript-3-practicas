@@ -1,29 +1,27 @@
-import { chosenMerch } from "../../config.js";
-
 class SaveDataLocal {
-	constructor(name, value) {
-		this.name = name;
-		this.value = value;
-	}
-
-	saveData() {
-		localStorage.setItem(this.name, JSON.stringify(this.value))
-	}
-
+  constructor(dataName) {
+    this.dataName = dataName;
+    this.products = JSON.parse(localStorage.getItem(this.dataName)) || [];
+  }
+  setProduct(product) {
+    this.products.push(product);
+    this.saveData();
+  }
 	getData () {
-		console.log(localStorage.getItem(this.name))
+		return JSON.parse(localStorage.getItem(this.dataName))
 	}
+  deleteProduct(id) {
+		id = parseInt(id)
+		this.products = this.products.filter((element) => element.id !== id);
+    this.saveData();
+  }
+  deleteData() {
+    localStorage.clear();
+		this.products = []
+  }
+  saveData() {
+    localStorage.setItem(this.dataName, JSON.stringify(this.products));
+  }
 }
 
-const prueba = new SaveDataLocal("merch", chosenMerch);
-
-export {prueba}
-
-
-const handleSaveData = (name, value) => {
-	localStorage.setItem(name,`${value}`)
-}
-
-const handleImportData = (value) => {
-	localStorage.getItem(value)
-}
+export default SaveDataLocal;

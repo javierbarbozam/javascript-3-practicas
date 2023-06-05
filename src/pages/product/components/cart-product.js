@@ -7,7 +7,6 @@ import {
 const initCart = () => {
   addProduct();
   handleCartDisplay();
-  generateCart();
 };
 
 export { initCart };
