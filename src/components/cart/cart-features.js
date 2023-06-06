@@ -2,8 +2,10 @@ import { CartItem } from "./Cart.js";
 import { chosenMerch } from "../../config.js";
 import SaveDataLocal from "../localStorage/LocalStorage.js";
 
-// idProduct created in order to delete an specific item
-// Every time AddProduct is clicked, the id count increases for next item
+/*
+idProduct created in order to delete an specific item
+Every time AddProduct is clicked, the id count increases for next item
+*/
 
 const cartProducts = new SaveDataLocal('cartProducts');
 
