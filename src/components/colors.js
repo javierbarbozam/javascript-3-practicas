@@ -1,4 +1,5 @@
 import Publisher from "../Publisher.js";
+import { createColorInput } from "./colorInput.js";
 
 const changeColor = new Publisher();
 
