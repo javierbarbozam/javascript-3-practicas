@@ -1,6 +1,7 @@
 import Publisher from "../Publisher.js";
 import { chosenMerch, merch } from "../config.js";
 import { createColorInput } from "./colorInput.js";
+import { initColorChange } from "./colors.js";
 
 const changeProduct = new Publisher();
 
@@ -30,6 +31,7 @@ const handleProductChange = () => {
       hideProduct();
       // Reset input color every time product is changed
       createColorInput();
+      initColorChange()
     });
   });
 };
