@@ -1,4 +1,5 @@
 import { merch, chosenMerch } from "../config.js";
+import { initColorChange } from "./colors.js";
 
 const getColor = (object, property) => {
   return object.hasOwnProperty(property) ? Object.keys(object[property]) : null;
@@ -15,8 +16,7 @@ const createColorInput = () => {
   );
   container.innerHTML = input;
 
-  // Make first input checked when page is launched
-  document.querySelector('input[name="product-color"]').checked = true;
+  initColorChange()
 };
 
 export { createColorInput };
