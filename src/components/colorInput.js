@@ -5,7 +5,7 @@ const getColor = (object, property) => {
   return object.hasOwnProperty(property) ? Object.keys(object[property]) : null;
 };
 
-const createColorInput = () => {
+const createColorInput = async () => {
   const colors = getColor(merch, chosenMerch.item);
   const container = document.getElementById("color-form");
   let input = "<span>Choose a color:</span>";
@@ -16,6 +16,7 @@ const createColorInput = () => {
   );
   container.innerHTML = input;
 
+  // in order to give input it's own event listener
   initColorChange()
 };
 

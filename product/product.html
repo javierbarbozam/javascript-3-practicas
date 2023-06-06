@@ -21,7 +21,8 @@
             <h1 id="product-title"></h1>
             <p id="product-price"></p>
             <button id="add-product">Add to Cart</button>
-            <form id="color-form" class="color-form" action="post"></form>
+            <form id="color-form" class="color-form" action="post">
+            </form>
             <div class="product-joke">
               <span>Joke:</span>
               <p id="joke-preview"></p>
@@ -39,18 +40,18 @@
           </div>
         </div>
       </div>
-      <aside id="cart-wrapper" class="cart-wrapper">
-        <div class="cart__overlay"></div>
+      <div id="cart-wrapper" class="cart-wrapper">
         <button class="cart-panel-btn" id="cart-panel-btn">
           <i class="material-icons cart-icon-open">shopping_cart</i>
           <i class="material-icons cart-icon-close">close</i>
         </button>
-        <div class="cart" id="cart">
+        <aside class="cart" id="cart">
           <span class="cart-title">Cart</span>
-          <div id="cart-item-wrapper"></div>
+          <div id="cart-item-wrapper">
+          </div>
           <button id="remove-all-cart">Remove all</button>
-        </div>
-      </aside>
+        </aside>
+      </div>
     </div>
     <script src="../src/pages/product/product.js" type="module" defer></script>
   </body>
