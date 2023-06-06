@@ -16,7 +16,7 @@ class SaveDataLocal {
     this.saveData();
   }
   deleteData() {
-    localStorage.clear();
+    localStorage.removeItem(this.dataName);
 		this.products = []
   }
   saveData() {

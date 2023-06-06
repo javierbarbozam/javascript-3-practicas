@@ -1,9 +1,10 @@
 import Publisher from "../Publisher.js";
 import { chosenMerch, merch } from "../config.js";
+import { createColorInput } from "./colorInput.js";
 
 const changeProduct = new Publisher();
 
-const initProductList = () => {
+const createProductList = () => {
   const products = Object.keys(merch);
   let list = "";
   products.forEach((element) => {
@@ -15,8 +16,9 @@ const initProductList = () => {
 
   let container = document.getElementById("product-form");
   container.insertAdjacentHTML("afterbegin", `${list}`);
-  handleProductChange();
-  hideProduct();
+
+  // Make first input checked when page is launched
+  createColorInput();
 };
 
 const handleProductChange = () => {
@@ -26,6 +28,8 @@ const handleProductChange = () => {
       event.preventDefault();
       changeProduct.onChange(element.value);
       hideProduct();
+      // Reset input color every time product is changed
+      createColorInput();
     });
   });
 };
@@ -38,6 +42,12 @@ const hideProduct = () => {
       ? (element.style.display = "none")
       : (element.style.display = "inline");
   });
+};
+
+const initProductList = () => {
+  createProductList();
+  handleProductChange();
+  hideProduct();
 };
 
 export { changeProduct, initProductList };

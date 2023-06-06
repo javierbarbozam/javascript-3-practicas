@@ -70,6 +70,7 @@ const generateCart = () => {
   container.innerHTML = "";
   let productContainer = "";
   const products = cartProducts.getData()
+  console.log(products)
   products.forEach(
     (element) =>
       (productContainer += `<div class="cart-item">
