@@ -1,0 +1,35 @@
+.nav-wrapper {
+  display: flex;
+  margin: 0 auto;
+}
+
+.nav-wrapper-list {
+  display: flex;
+  margin: 0 auto;
+  height: 100px;
+  width: 100%;
+  background-color: black;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 10px;
+}
+
+.nav-wrapper-list__item-anchor {
+  color: white;
+  display: block;
+  font-weight: 700;
+  padding: 15px 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.nav-wrapper-list__item-anchor--active {
+  background-color: white;
+  color: black;
+  border-radius: 5px 5px 0 0;
+  pointer-events: none;
+}
+
+.nav-wrapper-list__item-anchor:first-letter {
+  text-transform: uppercase;
+}

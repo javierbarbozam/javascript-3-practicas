@@ -1,0 +1,3 @@
+const cacheEvent = {};
+
+export { cacheEvent };
