@@ -14,7 +14,7 @@
   gap: 10px;
 }
 
-.nav-wrapper-list__item-anchor {
+.nav-wrapper-list__item {
   color: white;
   display: block;
   font-weight: 700;
@@ -23,13 +23,13 @@
   font-size: 20px;
 }
 
-.nav-wrapper-list__item-anchor--active {
+.nav-wrapper-list__item--active {
   background-color: white;
   color: black;
   border-radius: 5px 5px 0 0;
   pointer-events: none;
 }
 
-.nav-wrapper-list__item-anchor:first-letter {
+.nav-wrapper-list__item:first-letter {
   text-transform: uppercase;
 }

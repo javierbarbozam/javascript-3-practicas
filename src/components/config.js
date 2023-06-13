@@ -1,7 +1,7 @@
 const eventCategory = [
 	{
 		category: 'music',
-		active: true
+		active: false
 	}, 
 	{
 		category: 'art',

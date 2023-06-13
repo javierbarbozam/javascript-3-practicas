@@ -1,21 +1,9 @@
-import { fetchEvent } from "../api/api.js";
 import { getPrice } from "./getPrice.js";
 import { getDate } from "./getDate.js";
+import { getEvent } from "./getEvent.js";
 
-const urlCategory = () => {
-  let category = new URLSearchParams(window.location.search).get("category");
-  category === null ? (category = "music") : null;
-  return category;
-};
-
-const getEvents = async () => {
-  const category = urlCategory();
-  const events = await fetchEvent(category);
-  return events;
-};
-
-const showEvents = async () => {
-  const events = await getEvents();
+const showEvents = async (value) => {
+  const events = await getEvent(value);
   const container = document.getElementById("event-list");
   let eventList = "";
   events.forEach((element) => {
@@ -33,8 +21,4 @@ const showEvents = async () => {
   container.innerHTML = eventList;
 };
 
-const initEvents = () => {
-  showEvents();
-};
-
-export { initEvents };
+export { showEvents };
