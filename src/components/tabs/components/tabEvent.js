@@ -1,4 +1,3 @@
-import { cacheProxy } from "../../cache/cache.js";
 import { showEvents } from "../../event/showEvent.js";
 
 const tabEvents = () => {
