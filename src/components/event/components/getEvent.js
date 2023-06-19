@@ -1,5 +1,5 @@
-import { fetchEvent } from "../api/api.js";
-import { cacheProxy } from "../cache/cache.js";
+import { fetchEvent } from "../../api/api.js";
+import { cacheProxy } from "../../cache/cache.js";
 
 const getEvent = async (value) => {
   if (cacheProxy[value]) {

@@ -5,7 +5,12 @@ const createTabs = () => {
   let tabs = "";
   eventCategory.forEach(
     (element) =>
-      (tabs += `<li id="${element.category}" class="nav-wrapper-list__item">${element.category}</li>`)
+      (tabs +=
+        `<li>
+          <a 
+          class="nav-wrapper-list__item"
+          href="/src/pages/category/category.html?category=${element.category}">${element.category}</a>
+        </li>`)
   );
   container.innerHTML = tabs;
 };
