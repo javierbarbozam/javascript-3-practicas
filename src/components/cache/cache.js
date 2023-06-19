@@ -4,11 +4,10 @@ const eventCache = new DataStorage('eventCache')
 
 const cacheHandler = {
 	get: function(target, category) {
-    return target.getData(category)
+    return target.getProperty(category)
   },
   set: function(target, category, value) {
-    target.data[category] = value;
-    target.addData()
+    target.addProperty(category, value)
     return true;
   }
 }
