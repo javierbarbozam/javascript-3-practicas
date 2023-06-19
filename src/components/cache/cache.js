@@ -15,4 +15,4 @@ const cacheHandler = {
 
 const cacheProxy = new Proxy(eventCache, cacheHandler);
 
-export { eventCache, cacheProxy };
+export { cacheProxy };
