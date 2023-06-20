@@ -85,7 +85,7 @@
 
 .event-item__btn--favorite {
   position: absolute;
-  right: -3%;
+  right: 0;
   top: -550%;
   display: flex;
   justify-content: center;
