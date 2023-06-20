@@ -8,7 +8,6 @@ const addFavorite = async (element) => {
   const stateCategory = element.dataset.state;
   const category = getCategory();
   const event = await filterEvent(category, eventId)
-
   stateImmutable.addEvent(stateCategory, event)
 };
 

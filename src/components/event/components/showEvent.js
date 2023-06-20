@@ -1,14 +1,10 @@
 import { getPrice } from "./getPrice.js";
 import { getDate } from "./getDate.js";
-import { getEvent } from "./getEvent.js";
-import { getCategory } from "./getCategory.js";
 
 const showEvents = async (value) => {
-  const category = getCategory();
-  const events = await getEvent(category);
   const container = document.getElementById("event-list");
   let eventList = "";
-  events.forEach((element) => {
+  value.forEach((element) => {
     eventList += `<li class="event-item">
       <img src="${element.image}" alt="" class="event-item__img">
       <div class="event-item__wrapper">
