@@ -11,7 +11,6 @@ const userState = {
 
   addEvent(category, event) {
     const validation = state[category].find(element => element.id === event.id);
-    console.log(validation)
     if (validation) {
       return
     } else {

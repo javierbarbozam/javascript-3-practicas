@@ -2,7 +2,7 @@ import { stateImmutable } from "./state.js";
 import { getCategory } from "../event/components/getCategory.js";
 import { filterEvent } from "./filterEvent.js";
 
-const handleEventBtn = async (element) => {
+const AddInterested = async (element) => {
   // Filter which event will be added to the list
   const eventId = element.currentTarget.dataset.event_id;
   const stateCategory = element.currentTarget.value;
@@ -19,4 +19,13 @@ const handleEventBtn = async (element) => {
   }
 };
 
-export { handleEventBtn };
+const handleInterestedEvent = () => {
+  const interestedBtn = document.querySelectorAll('[data-id="event_state"]');
+  interestedBtn.forEach(element => {
+    element.addEventListener("click", (e) => {
+      AddInterested(e)
+    })
+  })
+}
+
+export { handleInterestedEvent };
