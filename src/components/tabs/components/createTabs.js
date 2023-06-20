@@ -1,18 +1,19 @@
-import { eventCategory } from "../../config.js";
+import { accountTab } from "./accountTab.js";
 
-const createTabs = () => {
+const createTabs = (value) => {
   const container = document.getElementById("category-nav");
-  let tabs = "";
-  eventCategory.forEach(
-    (element) =>
-      (tabs +=
-        `<li>
-          <a 
-          class="nav-wrapper-list__item"
-          href="/src/pages/category/category.html?category=${element.category}">${element.category}</a>
-        </li>`)
+  const account = accountTab();
+  let { tab, path } = accountTab();
+  value.forEach( (element) =>
+    (tab +=
+      `<li>
+        <a 
+        class="nav-wrapper-list__item"
+        href="${path}?category=${element.category}">${element.category}</a>
+      </li>`)
   );
-  container.innerHTML = tabs;
+  tab += account;
+  container.innerHTML = tab;
 };
 
 export { createTabs };

@@ -3,3 +3,4 @@ import {initEvents} from "../components/event/initEvents.js"
 
 initTabs();
 initEvents();
+

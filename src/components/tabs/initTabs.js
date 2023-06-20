@@ -1,8 +1,9 @@
 import { createTabs } from "./components/createTabs.js";
+import { eventCategory } from "../config.js";
 
 
 const initTabs = () => {
-  createTabs()
+  createTabs(eventCategory)
 }
 
 export { initTabs };
