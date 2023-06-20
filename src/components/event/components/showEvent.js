@@ -2,7 +2,8 @@ import { getPrice } from "./getPrice.js";
 import { getDate } from "./getDate.js";
 import { getEvent } from "./getEvent.js";
 import { getCategory } from "./getCategory.js";
-import { handleFavoriteBtn, handleEventBtn } from "../../state/addFavorites.js";
+import { handleFavoriteBtn } from "../../state/addFavorites.js";
+import { handleEventBtn } from "../../state/addInterested.js";
 
 const showEvents = async (value) => {
   const category = getCategory();

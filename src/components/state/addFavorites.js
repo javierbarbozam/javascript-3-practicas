@@ -10,20 +10,4 @@ const handleFavoriteBtn = async (element) => {
   stateImmutable.addEvent(stateCategory, event)
 };
 
-
-const handleEventBtn = async (element) => {
-  const eventId = element.currentTarget.dataset.event_id
-  const stateCategory = element.currentTarget.value
-  const category = getCategory();
-  const event = await filterEvent(category, eventId)
-
-  if (stateCategory === 'interested') {
-    stateImmutable.addEvent(stateCategory, event)
-    stateImmutable.removeGoingEvent(event)
-  } else {
-    stateImmutable.addEvent(stateCategory, event)
-    stateImmutable.removeInterestedEvent(event)
-  }
-}
-
-export { handleFavoriteBtn, handleEventBtn };
+export { handleFavoriteBtn };

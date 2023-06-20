@@ -10,12 +10,13 @@ const userState = {
   },
 
   addEvent(category, event) {
-    const validation = state[category].indexOf(event);
-    if (validation === -1) {
+    const validation = state[category].find(element => element.id === event.id);
+    console.log(validation)
+    if (validation) {
+      return
+    } else {
       state[category].push(event);
       this.saveState();
-    } else {
-      return;
     }
   },
 
