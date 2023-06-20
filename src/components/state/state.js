@@ -28,6 +28,20 @@ const userState = {
     }
   },
 
+  removeGoingEvent(event) {
+    state.going = state.going.filter(
+      (element) => element.id !== event.id
+    );
+    this.saveState();
+  },
+
+  removeInterestedEvent(event) {
+    state.interested = state.interested.filter(
+      (element) => element.id !== event.id
+    );
+    this.saveState();
+  },
+
   removeEvent(category, event) {
     this.getLocalState();
     state[category] = state[category].filter(

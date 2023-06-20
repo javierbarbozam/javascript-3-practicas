@@ -2,7 +2,7 @@ import { getPrice } from "./getPrice.js";
 import { getDate } from "./getDate.js";
 import { getEvent } from "./getEvent.js";
 import { getCategory } from "./getCategory.js";
-import { initEventButtons } from "../../state/addFavorites.js";
+import { handleFavoriteBtn, handleEventBtn } from "../../state/addFavorites.js";
 
 const showEvents = async (value) => {
   const category = getCategory();
@@ -20,10 +20,10 @@ const showEvents = async (value) => {
         <p class="event-item__date">${getDate(element.date)}</p>
         <p class="event-item__location">${element.location.address} • ${element.location.city}, ${element.location.state}</p>
         <span class="event-item__price">${getPrice(element.price)}</span>
-        <div>
-          <button data-id="js-interested-btn" data-event_id="${element.id}" data-state="interested">Interested</button>
-          <button data-id="js-going-btn" data-event_id="${element.id}" data-state="going">Going!</button>
-        </div>
+        <form>
+        <button data-id="event_state" data-event_id="${element.id}" value="interested">Interested</button>
+        <button data-id="event_state" data-event_id="${element.id}" value="going">Going</button>
+        </form>
       </div>
     </li>`;
   });
@@ -33,23 +33,18 @@ const showEvents = async (value) => {
   const favoriteBtn = document.querySelectorAll('[data-id="js-favorite-btn"]');
   favoriteBtn.forEach((element) => {
     element.addEventListener("click", () => {
-      initEventButtons(element);
+      handleFavoriteBtn(element);
     });
   });
-  // add interested event listener
-  const interestedBtn = document.querySelectorAll('[data-id="js-interested-btn"]');
-  interestedBtn.forEach((element) => {
-    element.addEventListener("click", () => {
-      initEventButtons(element);
-    });
-  });
-  // add going event listener
-  const goingBtn = document.querySelectorAll('[data-id="js-going-btn"]');
-  goingBtn.forEach((element) => {
-    element.addEventListener("click", () => {
-      initEventButtons(element);
-    });
-  });
+
+  // add favorites event listener
+  const interestedBtn = document.querySelectorAll('[data-id="event_state"]');
+  interestedBtn.forEach(element => {
+    element.addEventListener("click", (e) => {
+      e.preventDefault()
+      handleEventBtn(e)
+    })
+  })
 };
 
 export { showEvents };
