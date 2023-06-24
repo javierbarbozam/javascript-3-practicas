@@ -17,7 +17,7 @@ const accountTab = () => {
   }
   // return path to use it in every event card
   // return tab to use it in DOM
-  return {tab, path}
+  return {page, tab, path}
 };
 
 export { accountTab };

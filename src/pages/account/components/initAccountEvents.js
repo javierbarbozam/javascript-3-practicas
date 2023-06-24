@@ -1,6 +1,6 @@
-import { getAccountCategory } from "../../../components/event/components/getCategory.js";
-import { getEventAccount } from "../../../components/event/components/getEvent.js";
-import { showEvents } from "../../../components/event/components/showEvent.js";
+import { getAccountCategory } from "../../../components/eventCard/components/getCategory.js";
+import { getEventAccount } from "../../../components/eventCard/components/getEvent.js";
+import { showEvents } from "../../../components/eventCard/components/showEvent.js";
 
 const initAccountEvents = () => {
   const category = getAccountCategory()

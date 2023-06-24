@@ -5,13 +5,13 @@ import { getCategory } from "./components/getCategory.js";
 import { getEventCategory } from "./components/getEvent.js";
 
 const initEvents = async () => {
-  const category = getCategory()
-  const events = await getEventCategory(category)
+  const category = getCategory();
+  const events = await getEventCategory(category);
   showEvents(events);
   // add favorites event listener
-  handleFavoriteEvent()
+  handleFavoriteEvent();
   // add favorites event listener
-  handleInterestedEvent()
+  handleInterestedEvent();
 };
 
 export { initEvents };

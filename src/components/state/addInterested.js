@@ -1,5 +1,5 @@
 import { stateImmutable } from "./state.js";
-import { getCategory } from "../event/components/getCategory.js";
+import { getCategory } from "../eventCard/components/getCategory.js";
 import { filterEvent } from "./filterEvent.js";
 
 const AddInterested = async (element) => {

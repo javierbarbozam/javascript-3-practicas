@@ -1,4 +1,4 @@
-import { getEventCategory } from "../event/components/getEvent.js";
+import { getEventCategory } from "../eventCard/components/getEvent.js";
 
 const filterEvent = async (category, value) => {
   const events = await getEventCategory(category);

@@ -1,5 +1,3 @@
-import { eventCategory } from "../../config.js";
-
 const getCategory = () => {
   let category = new URLSearchParams(window.location.search).get("category");
   // Show default events when there is no "category" at SearchParams
