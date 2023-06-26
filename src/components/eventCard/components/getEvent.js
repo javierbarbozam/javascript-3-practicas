@@ -15,7 +15,6 @@ const getEventCategory = async (value) => {
 const getEventAccount = (value) => {
   const events = stateImmutable.getState();
   if (events[value].length) {
-    console.log(events[value])
     return events[value];
   } else {
     console.log('No hay eventos')
