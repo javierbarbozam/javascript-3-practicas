@@ -34,6 +34,10 @@ const accountCategory = [
     category: "going",
     active: false,
   },
+  {
+    category: "calendar",
+    active: false,
+  },
 ];
 
 export { eventCategory, accountCategory };

@@ -1,7 +1,7 @@
-import { getEventCategory } from "../eventCard/components/getEvent.js";
+import { cacheProxy } from "../cache/cache.js";
 
-const filterEvent = async (category, value) => {
-  const events = await getEventCategory(category);
+const filterEvent = (category, value) => {
+  const events = cacheProxy[category]
   const result = events.find((element) => element.id === value);
   return result;
 };

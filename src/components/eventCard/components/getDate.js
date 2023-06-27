@@ -7,7 +7,7 @@ const getDate = (value) => {
     hour: "numeric",
     minute: "numeric",
   };
-  return date.toLocaleDateString(undefined, options);
+  return date.toLocaleDateString('en-us', options);
 };
 
 export { getDate };

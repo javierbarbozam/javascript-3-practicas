@@ -13,11 +13,29 @@
         <ul id="category-nav" class="nav-wrapper-list"></ul>
       </nav>
     </header>
-    <main>
-      <section>
-        <ul class="event" id="event-list"></ul>
-      </section>
+    <main id="main-content">
+      <ul class="event" id="event-list"></ul>
     </main>
+
+    <div id="newEventModal">
+      <h2>New Event</h2>
+
+      <input id="eventTitleInput" placeholder="Event Title" />
+
+      <button id="saveButton">Save</button>
+      <button id="cancelButton">Cancel</button>
+    </div>
+
+    <div id="deleteEventModal">
+      <h2>Event</h2>
+
+      <p id="eventText"></p>
+
+      <button id="deleteButton">Delete</button>
+      <button id="closeButton">Close</button>
+    </div>
+
+    <div id="modalBackDrop"></div>
     <script type="module" src="./account.js" defer></script>
   </body>
 </html>

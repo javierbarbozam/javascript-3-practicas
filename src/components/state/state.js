@@ -25,6 +25,7 @@ const userState = {
       state.favorite = localState.favorite || []
       state.interested = localState.interested || []
       state.going = localState.going || []
+      this.saveState();
     }
   },
 

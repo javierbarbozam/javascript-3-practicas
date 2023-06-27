@@ -11,6 +11,7 @@ const AddInterested = async (element) => {
   
   // Add the event to interested or going list
   if (stateCategory === "interested") {
+    console.log(stateCategory)
     stateImmutable.addEvent(stateCategory, event);
     stateImmutable.removeGoingEvent(event);
   } else {

@@ -1,24 +1,25 @@
-import { accountTab } from "../../tabs/components/accountTab.js";
-import { getAccountCategory } from "./getCategory.js";
-import { accountCategory } from "../../config.js";
+import { accountTab } from "../../../tabs/components/accountTab.js";
+import { getAccountCategory } from "../getCategory.js";
+import { accountCategory } from "../../../config.js";
 
 const homeBtn = (id) => {
-  const categories = accountCategory.map(element => element.category)
+  const categories = accountCategory.filter(element => element.category !== 'calendar')
   let btn = '';
   categories.forEach(element => {
-    if(element === 'favorite') {
+    const {category} = element
+    if(category === 'favorite') {
       btn +=
       `<button
-        class="event-item__btn event-item__btn--${element}"
-        data-id="js-${element}-btn" data-event_id="${id}" data-state="${element}">
-		    <span class="material-symbols-rounded">${element}</span>
+        class="event-item__btn event-item__btn--${category}"
+        data-id="js-${category}-btn" data-event_id="${id}" data-state="${category}">
+		    <span class="material-symbols-rounded">${category}</span>
 	    </button>`
     } else {
       btn +=
       `<button
         class="event-item__btn event-item__btn--state"
         data-id="event_state" data-event_id="${id}"
-        value="${element}">${element}
+        value="${category}">${category}
       </button>`;
     }
   })

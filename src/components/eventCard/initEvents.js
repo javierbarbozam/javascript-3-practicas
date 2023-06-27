@@ -1,5 +1,5 @@
 import { showEvents } from "./components/showEvent.js";
-import { handleFavoriteEvent } from "../state/addFavorites.js";
+import { handleFavoriteEvent } from "../eventCard/components/buttons/addFavorites.js";
 import { handleInterestedEvent } from "../state/addInterested.js";
 import { getCategory } from "./components/getCategory.js";
 import { getEventCategory } from "./components/getEvent.js";
