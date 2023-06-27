@@ -39,20 +39,19 @@ const createCalendar = () => {
 
     if (i > foreignDays) {
       dayContainer.innerText = i - foreignDays;
-      const eventForDay = events.find(e => e.date === dayString);
-
       if (i - foreignDays === day && currentMonth === 0) {
         dayContainer.classList.add('calendar-month__item--today')
       }
-
+      
+      const eventForDay = events.find(e => e.date === dayString);
       if (eventForDay) {
         const eventDiv = document.createElement('div');
         eventDiv.classList.add('event');
         eventDiv.innerText = eventForDay.title;
         dayContainer.appendChild(eventDiv);
       }
-
       dayContainer.addEventListener('click', () => openModal(dayString));
+
     } else {
       dayContainer.classList.add('calendar-day__item--foreign');
     }

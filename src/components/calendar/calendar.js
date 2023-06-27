@@ -1,3 +1,5 @@
+import { stateImmutable } from "../state/state.js";
+
 // Global variables
 let currentMonth = 0;
 let clicked = null;
@@ -119,17 +121,22 @@ const addDays = (container) => {
       dayWrapper.innerHTML = `<span>${i - foreignDays}</span>`
       // Add style to current day
       i - foreignDays === day && currentMonth === 0 ? dayWrapper.classList.add('calendar-month__item--today') : null
+
+      dayWrapper.addEventListener('click', () => openEventModal())
     } else {
-      dayWrapper.classList.add('calendar-day__item--foreign');
+      dayWrapper.classList.add('calendar-month__item--foreign');
     }
     container.appendChild(dayWrapper);
     calendar.appendChild(container);
   }
 }
 
-const handleDayEvents = () => {
+const addEvents = () => {
+  const events = stateImmutable.getState()
 
+  return events
 }
+console.log(addEvents())
 
 const createCalendar = () => {
   const calendar = document.getElementById('calendar')
@@ -147,12 +154,83 @@ const createCalendar = () => {
   addDays(daysContainer)
 }
 
+function openEventModal(date) {
+  clicked = date;
+
+  const eventForDay = events.find(e => e.date === clicked);
+
+  if (eventForDay) {
+    document.getElementById('eventText').innerText = eventForDay.title;
+    deleteEventModal.style.display = 'block';
+  } else {
+    newEventModal.style.display = 'block';
+  }
+
+  backDrop.style.display = 'block';
+}
+
+function closeModal() {
+  eventTitleInput.classList.remove('error');
+  newEventModal.style.display = 'none';
+  deleteEventModal.style.display = 'none';
+  backDrop.style.display = 'none';
+  eventTitleInput.value = '';
+  clicked = null;
+  createCalendar();
+}
+
+function saveEvent() {
+  if (eventTitleInput.value) {
+    eventTitleInput.classList.remove('error');
+
+    events.push({
+      date: clicked,
+      title: eventTitleInput.value,
+    });
+
+    localStorage.setItem('events', JSON.stringify(events));
+    closeModal();
+  } else {
+    eventTitleInput.classList.add('error');
+  }
+}
+
+function deleteEvent() {
+  events = events.filter(e => e.date !== clicked);
+  localStorage.setItem('events', JSON.stringify(events));
+  closeModal();
+}
+
+function initButtons() {
+  document.getElementById('saveButton').addEventListener('click', saveEvent);
+  document.getElementById('cancelButton').addEventListener('click', closeModal);
+  document.getElementById('deleteButton').addEventListener('click', deleteEvent);
+  document.getElementById('closeButton').addEventListener('click', closeModal);
+}
+
 const initCalendar = () => {
   addCalendarContainer()
   addCalendarHeader()
   addWeekDays()
   createCalendar();
   handleMonthChange()
+  initButtons();
 };
 
 export { initCalendar };
+
+
+// function openModal(date) {
+//   clicked = date;
+
+//   const eventForDay = events.find(e => e.date === clicked);
+
+//   if (eventForDay) {
+//     document.getElementById('eventText').innerText = eventForDay.title;
+//     deleteEventModal.style.display = 'block';
+//   } else {
+//     newEventModal.style.display = 'block';
+//   }
+
+//   backDrop.style.display = 'block';
+// }
