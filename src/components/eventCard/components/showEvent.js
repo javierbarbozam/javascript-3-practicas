@@ -30,4 +30,4 @@ const showEvents = (value) => {
   container.innerHTML = eventList;
 };
 
-export { showEvents };
+export { cardContent, showEvents };
