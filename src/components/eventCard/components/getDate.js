@@ -1,9 +1,9 @@
 const getDate = (value) => {
   const date = new Date(value);
   const options = {
-    weekday: "short",
     month: "short",
     day: "numeric",
+    weekday: "short",
     hour: "numeric",
     minute: "numeric",
   };

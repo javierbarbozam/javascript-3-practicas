@@ -24,13 +24,11 @@
 
 .calendar-month__item {
   width: 100%;
-  padding: 10px;
   aspect-ratio: 1/1;
   cursor: pointer;
   background-color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  overflow: hidden;
+  padding: 5px;
 }
 
 .calendar-month__item:hover {
@@ -44,7 +42,30 @@
 }
 
 .calendar-month__item--today {
-  background-color: rgb(203, 231, 233);
+  border: solid 2px red;
+}
+
+.calendar-month__item__date {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.calendar-month__item__event {
+  font-size: 12px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.calendar-month__item__event--favorite {
+  background-color: pink;
+}
+
+.calendar-month__item__event--interested {
+  background-color: rgb(243, 243, 123);
+}
+
+.calendar-month__item__event--going {
+  background-color: rgb(143, 183, 143);
 }
 
 .calendar-header {

@@ -88,24 +88,13 @@ const createBtn = () => {
 }
 
 const handleMonthChange = () => {
-  const nextBtn = document.getElementById('calendar-btn-next')
-  const previousBtn = document.getElementById('calendar-btn-previous')
-
-  nextBtn.addEventListener('click', () => {
-    currentMonth++;
+  const monthBtn = document.querySelectorAll('.calendar-header__btn')
+  monthBtn.forEach(element => element.addEventListener('click', (e) => {
+    e.currentTarget.id === 'calendar-btn-next' ? currentMonth ++ : currentMonth --
     addCalendarHeader();
     handleMonthChange()
     createCalendar();
-  });
-
-  previousBtn.addEventListener('click', () => {
-    currentMonth--;
-    addCalendarHeader();
-    handleMonthChange()
-    createCalendar();
-  });
-  
-
+  }))
 }
 
 const addDays = (container) => {
@@ -118,10 +107,17 @@ const addDays = (container) => {
     dayWrapper.classList.add('calendar-month__item');
 
     if (i > foreignDays) {
-      dayWrapper.innerHTML = `<span>${i - foreignDays}</span>`
+      // Add day to every box
+      dayWrapper.innerHTML = `<span class="calendar-month__item__date">${i - foreignDays}</span>`
+
       // Add style to current day
       i - foreignDays === day && currentMonth === 0 ? dayWrapper.classList.add('calendar-month__item--today') : null
+      
+      // Add event to the current looped day
+      const date = `${month + 1}/${i - foreignDays}/${year}`;
+      addEvents(date, dayWrapper)
 
+      // Add modal click event
       dayWrapper.addEventListener('click', () => openEventModal())
     } else {
       dayWrapper.classList.add('calendar-month__item--foreign');
@@ -131,17 +127,32 @@ const addDays = (container) => {
   }
 }
 
-const addEvents = () => {
+const addEvents = (value, container) => {
   const events = stateImmutable.getState()
+  const eventCategories = Object.keys(events)
+  const result = document.createElement("p");
 
-  return events
+  // Fix timestamp to date format
+  for (const category of eventCategories) {
+    for (const obj of events[category]) {
+      obj.date = new Date(obj.date).toLocaleDateString('en-us')
+
+      // Add event if date matches
+      if (value === obj.date) {
+        result.insertAdjacentHTML(
+          'beforeend',
+          `<p id="${obj.id}" class="calendar-month__item__event calendar-month__item__event--${category}">${obj.title}</p>`
+        )
+      }
+    }
+  }
+  container.appendChild(result)
 }
-console.log(addEvents())
 
 const createCalendar = () => {
   const calendar = document.getElementById('calendar')
 
-  // Clean container every time buttons are clicked and creates container first time the page loads
+  // Creates container first time the page loads and cleans it every time buttons are clicked
   let daysContainer = document.querySelector('.calendar-month')
   if (daysContainer) {
     daysContainer.innerHTML = '';
