@@ -25,14 +25,10 @@
 .calendar-month__item {
   width: 100%;
   aspect-ratio: 1/1;
-  cursor: pointer;
   background-color: white;
-  overflow: hidden;
+  overflow-y: hidden;
   padding: 5px;
-}
-
-.calendar-month__item:hover {
-  background-color: #eeeeee;
+  position: relative;
 }
 
 .calendar-month__item--foreign {
@@ -54,6 +50,12 @@
   font-size: 12px;
   padding: 5px;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.calendar-month__item__event:hover {
+  filter: saturate(4);
+  transform: scale(1.05);
 }
 
 .calendar-month__item__event--favorite {
@@ -108,19 +110,55 @@
   left: 0;
 }
 
+.calendar-modal {
+  position: absolute;
+  z-index: 2;
+  width: 30vw;
+  height: fit-content;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: initModal 0.1s ease-in;
+}
+
+.calendar-modal__overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.511);
+  animation: initModal 0.1s ease-in;
+}
+
+.event-modal {
+  display: none;
+  z-index: 20;
+  padding: 25px;
+  background-color: #e8f4fa;
+  box-shadow: 0px 0px 3px black;
+  border-radius: 5px;
+  width: 350px;
+  top: 100px;
+  left: calc(50% - 175px);
+  position: absolute;
+  font-family: sans-serif;
+}
+
+@keyframes initModal {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
 /* ---------------------------------------- */
 
-/* .event {
-  font-size: 10px;
-  padding: 3px;
-  background-color: #58bae4;
-  color: white;
-  border-radius: 5px;
-  max-height: 55px;
-  overflow: hidden;
-} */
-
-#newEventModal, #deleteEventModal {
+#newEventModal,
+#deleteEventModal {
   display: none;
   z-index: 20;
   padding: 25px;
@@ -146,10 +184,12 @@
 #eventTitleInput.error {
   border: 2px solid red;
 }
-#cancelButton, #deleteButton {
+#cancelButton,
+#deleteButton {
   background-color: #d36c6c;
 }
-#saveButton, #closeButton {
+#saveButton,
+#closeButton {
   background-color: #92a1d1;
 }
 #eventText {
@@ -163,5 +203,5 @@
   width: 100vw;
   height: 100vh;
   position: absolute;
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0, 0, 0, 0.8);
 }
