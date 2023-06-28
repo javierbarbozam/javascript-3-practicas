@@ -19,6 +19,11 @@ const userState = {
     }
   },
 
+  getEvent(category, eventId) {
+    const event = state[category].find(element => element.id === eventId)
+    return event
+  },
+
   getLocalState() {
     const localState = JSON.parse(localStorage.getItem("state"));
     if (localState) {
