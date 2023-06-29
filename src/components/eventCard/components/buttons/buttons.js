@@ -2,7 +2,7 @@ import { accountTab } from "../../../tabs/components/accountTab.js";
 import { getAccountCategory } from "../getCategory.js";
 import { accountCategory } from "../../../config.js";
 
-const homeBtn = (id) => {
+const homeEventBtn = (id) => {
   const categories = accountCategory.filter((element) => element.category !== "calendar");
   let favoriteBtn = '';
   let buttons = '';
@@ -26,7 +26,7 @@ const homeBtn = (id) => {
   return container;
 };
 
-const accountBtn = (category, id) => {
+const accountEventBtn = (category, id) => {
   let btn = "";
   category === "calendar"
     ? null
@@ -38,10 +38,10 @@ const accountBtn = (category, id) => {
 const createBtn = (id) => {
   const { page } = accountTab();
   if (page === "index.html") {
-    return homeBtn(id);
+    return homeEventBtn(id);
   } else {
     const accountCategory = getAccountCategory();
-    return accountBtn(accountCategory, id);
+    return accountEventBtn(accountCategory, id);
   }
 };
 
