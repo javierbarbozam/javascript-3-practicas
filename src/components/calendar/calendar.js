@@ -177,7 +177,6 @@ const openEventModal = (event, category) => {
   container.prepend(eventContainer, overlay);
 }
 
-
 const closeEventModal = () =>  {
   const eventContainer = document.querySelector('.calendar-modal')
   const overlay = document.querySelector('.calendar-modal__overlay')
@@ -200,7 +199,6 @@ const createCalendar = () => {
   // Insert days into month
   addDays(daysContainer);
 };
-
 
 const initCalendar = () => {
   addCalendarContainer();

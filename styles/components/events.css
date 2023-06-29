@@ -19,19 +19,19 @@
 
 .event-item__wrapper {
   display: grid;
-  grid-template-rows: repeat(5, 1fr);
-  padding: 30px 15px 10px;
+  gap: 2px;
+  padding: 20px 15px 10px;
   background-color: white;
-  height: 45%;
+  height: 60%;
 }
 
 .event-item__img {
   display: block;
   width: 100%;
-  height: 55%;
+  height: 40%;
   object-fit: cover;
   object-position: top;
-  transition: ease-in-out 0.3s;
+  transition: ease-in-out 0.2s;
 }
 
 .event-item:hover .event-item__img {
@@ -40,14 +40,13 @@
 
 .event-item__title {
   font-weight: 700;
-  max-height: 32px;
+  max-height: 20px;
   overflow: scroll;
 }
 
 .event-item__date {
   color: red;
   font-size: 12px;
-  margin: 5px 0;
 }
 
 .event-item__location {
@@ -91,7 +90,7 @@
 .event-item__btn--favorite {
   position: absolute;
   right: 0;
-  top: -550%;
+  top: -480%;
   display: flex;
   justify-content: center;
   align-items: center;

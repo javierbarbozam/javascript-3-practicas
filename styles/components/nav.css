@@ -24,6 +24,10 @@
   font-size: 20px;
 }
 
+.nav-wrapper-list__item:hover {
+  transform: scale(1.05);
+}
+
 .nav-wrapper-list__item--acount {
   position: absolute;
   right: 0;

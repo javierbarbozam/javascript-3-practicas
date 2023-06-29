@@ -12,9 +12,7 @@ const cardContent = (element) => {
         <p class="event-item__date">${getDate(date)}</p>
         <p class="event-item__location">${location.address} • ${location.city}, ${location.state}</p>
         <span class="event-item__price">${getPrice(price)}</span>
-        <div class="event-item__btn-wrapper" data-id="event-btn-wrapper">
-          ${createBtn(id)}
-        </div>
+        ${createBtn(id)}
       </div>
     </li>`;
   return content
