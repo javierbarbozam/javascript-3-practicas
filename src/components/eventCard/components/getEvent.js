@@ -1,4 +1,4 @@
-import { fetchEvent } from "../../api/api.js";
+import { fetchEvent } from "../../api.js";
 import { cacheProxy } from "../../cache/cache.js";
 import { stateImmutable } from "../../state/state.js";
 
