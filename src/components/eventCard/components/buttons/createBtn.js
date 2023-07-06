@@ -11,7 +11,7 @@ const homeEventBtn = (id) => {
     if (category === "favorite") {
       favoriteBtn += `<button
         class="event-item__btn event-item__btn--${category}"
-        data-id="js-${category}-btn" data-event_id="${id}" data-state="${category}">
+        value="${category}" data-id="js-${category}-btn" data-event_id="${id}" data-state="${category}">
 		    <span class="material-symbols-rounded">${category}</span>
 	    </button>`;
     } else {

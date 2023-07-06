@@ -3,15 +3,17 @@ import { handleFavoriteEvent } from "../eventCard/components/buttons/addFavorite
 import { handleInterestedEvent } from "../state/addInterested.js";
 import { getCategory } from "./components/getCategory.js";
 import { getEventCategory } from "./components/getEvent.js";
+import { addBtnEvent } from "./components/buttons/BtnEvent.js";
 
 const initEvents = async () => {
   const category = getCategory();
   const events = await getEventCategory(category);
   showEvents(events);
+  addBtnEvent(category);
   // add favorites event listener
-  handleFavoriteEvent();
+  // handleFavoriteEvent();
   // add favorites event listener
-  handleInterestedEvent();
+  // handleInterestedEvent();
 };
 
 export { initEvents };

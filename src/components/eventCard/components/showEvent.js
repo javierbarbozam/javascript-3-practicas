@@ -1,6 +1,6 @@
 import { getPrice } from "./getPrice.js";
 import { getDate } from "./getDate.js";
-import {createBtn} from './buttons/buttons.js'
+import {createBtn} from './buttons/createBtn.js'
 
 const cardContent = (element) => {
   const {image, title, date, location, price, id} = element;

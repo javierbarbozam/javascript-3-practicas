@@ -8,7 +8,7 @@ const filterEvent = (element) => {
   const events = cacheProxy[category];
   const result = events.find((element) => element.id === eventId);
   return result;
-};
+}; // ya copié este código
 
 const handleFavorite = (event, category, button) => {
   const state = stateImmutable.getState();
