@@ -1,9 +1,8 @@
 import { cacheProxy } from "../../../cache.js";
 import { stateImmutable } from "../../../state.js";
-import { getCategory } from "../getCategory.js";
 
 const eventFromCache = (category, element) => {
-  const eventId = element.dataset.event_id;
+  const eventId = element.id;
   const events = cacheProxy[category];
   const result = events.find((element) => element.id === eventId);
   return result;
@@ -14,16 +13,13 @@ const handleState = (category, button) => {
   const stateCategory = button.value;
   const state = stateImmutable.getState();
 
-  // const key = state[stateCategory];
-  // const filterEvent = key.find(element => element.id === currentEvent.id)
-
   // Get clicked event data
   const currentEvent = eventFromCache(category, button);
 
-  // Filter event from state
+  // Look for event in state
   const filterEvent = stateImmutable.getEvent(stateCategory, currentEvent.id);
 
-  // Add or Remove from state
+  // Add or remove event
   if (filterEvent) {
     stateImmutable.removeEvent(stateCategory, currentEvent);
   } else {
@@ -41,14 +37,10 @@ const handleState = (category, button) => {
 
 const addButtonEvent = (category) => {
   const tabCategory = category;
-  const events = cacheProxy[tabCategory];
-  const buttons = document.querySelectorAll(".event-item__btn");
+  const buttons = document.querySelectorAll(".js-event-btn");
 
   buttons.forEach((element) =>
     element.addEventListener("click", () => {
-      // Get needed data from button
-      const eventId = element.dataset.event_id;
-      const stateCategory = element.value;
 
       handleState(tabCategory, element);
     })
@@ -56,3 +48,30 @@ const addButtonEvent = (category) => {
 };
 
 export { addButtonEvent };
+
+/////// Código para estilos ////////
+
+/*
+
+const handleFavorite = (event, category, button) => {
+  const state = stateImmutable.getState();
+  const { favorite } = state;
+  const result = favorite.find(element => element.id === event.id)
+  if(!result) {
+    stateImmutable.addEvent(category, event);
+    handleFavoriteStyles(button, true)
+  } else {
+    stateImmutable.removeEvent(category, event);
+    handleFavoriteStyles(button)
+  }
+};
+
+const handleFavoriteStyles = (element, flag) => {
+ if (flag) {
+  element.classList.toggle('event-item__btn--favorite--active')
+ } else {
+  element.classList.toggle('event-item__btn--favorite--active')
+ }
+}
+
+*/

@@ -10,14 +10,15 @@ const homeEventBtn = (id) => {
     const { category } = element;
     if (category === "favorite") {
       favoriteBtn += `<button
-        class="event-item__btn event-item__btn--${category}"
-        value="${category}" data-id="js-${category}-btn" data-event_id="${id}" data-state="${category}">
+        class="js-event-btn event-item__btn event-item__btn--${category}"
+        id="${id}"
+        value="${category}" data-state="${category}">
 		    <span class="material-symbols-rounded">${category}</span>
 	    </button>`;
     } else {
       buttons += `<button
-        class="event-item__btn event-item__btn--state"
-        data-id="event_state" data-event_id="${id}"
+        class="js-event-btn event-item__btn"
+        id="${id}"
         value="${category}">${category}
       </button>`;
     }

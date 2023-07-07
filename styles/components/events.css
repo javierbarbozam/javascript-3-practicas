@@ -72,13 +72,6 @@
   background: none;
   border: none;
   cursor: pointer;
-}
-
-.event-item__btn::first-letter {
-  text-transform: uppercase;
-}
-
-.event-item__btn--state {
   background-color:  rgb(62, 135, 142);
   color: white;
   border: none;
@@ -87,7 +80,12 @@
   border-radius: 2px;
 }
 
+.event-item__btn::first-letter {
+  text-transform: uppercase;
+}
+
 .event-item__btn--favorite {
+  width: initial;
   position: absolute;
   right: 0;
   top: -480%;
