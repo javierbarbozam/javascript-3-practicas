@@ -1,6 +1,6 @@
 import { stateImmutable } from "../../../state/state.js";
 import { getCategory } from "../getCategory.js";
-import { cacheProxy } from "../../../cache/cache.js";
+import { cacheProxy } from "../../../cache.js";
 
 const filterEvent = (element) => {
   const eventId = element.dataset.event_id;

@@ -1,5 +1,5 @@
-import { cacheProxy } from "../../../cache/cache.js";
-import { stateImmutable } from "../../../state/state.js";
+import { cacheProxy } from "../../../cache.js";
+import { stateImmutable } from "../../../state.js";
 import { getCategory } from "../getCategory.js";
 
 const eventFromCache = (category, element) => {

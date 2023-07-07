@@ -1,6 +1,6 @@
 import { fetchEvent } from "../../api.js";
-import { cacheProxy } from "../../cache/cache.js";
-import { stateImmutable } from "../../state/state.js";
+import { cacheProxy } from "../../cache.js";
+import { stateImmutable } from "../../state.js";
 
 const getEventCategory = async (value) => {
   if (cacheProxy[value]) {

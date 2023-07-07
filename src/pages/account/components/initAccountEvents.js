@@ -1,4 +1,4 @@
-import { initCalendar } from "../../../components/calendar/calendar.js";
+import { initCalendar } from "../../../components/calendar.js";
 import { getAccountCategory } from "../../../components/eventCard/components/getCategory.js";
 import { getEventAccount } from "../../../components/eventCard/components/getEvent.js";
 import { showEvents } from "../../../components/eventCard/components/showEvent.js";
