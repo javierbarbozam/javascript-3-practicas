@@ -32,7 +32,7 @@ const accountEventBtn = (category, id) => {
   category === "calendar"
     ? null
     : (btn += `<span>Not ${category} anymore?</span>
-    <button value="${category}" data-event_id="${id}">Remove</button>`);
+    <button value="${category}" id="${id}">Remove</button>`);
   return btn;
 };
 
