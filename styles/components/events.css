@@ -84,6 +84,13 @@
   text-transform: uppercase;
 }
 
+.event-item__btn--active {
+  background-color: transparent;
+  color: rgb(62, 135, 142);
+  text-decoration: underline;
+  border: none;
+}
+
 .event-item__btn--favorite {
   width: initial;
   position: absolute;
