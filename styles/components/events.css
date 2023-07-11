@@ -1,3 +1,10 @@
+.main-content__message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .event {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
