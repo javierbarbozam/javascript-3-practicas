@@ -1,12 +1,12 @@
-import { cacheProxy } from "../../../cache.js";
-import { stateImmutable } from "../../../state.js";
-import { accountTab } from "../../tabs.js";
-import { handleBtnStyle } from "./btnStyleHandler.js";
+import { cacheProxy } from '../../../cache.js';
+import { stateImmutable } from '../../../state.js';
+import { accountTab } from '../../tabs.js';
+import { handleBtnStyle } from './btnStyleHandler.js';
 
 const eventFromCache = (category, element) => {
   const eventId = element.id;
   const events = cacheProxy[category];
-  const result = events.find((element) => element.id === eventId);
+  const result = events.find((item) => item.id === eventId);
   return result;
 };
 
@@ -28,47 +28,43 @@ const handleState = (category, button) => {
     stateImmutable.removeEvent(stateCategory, currentEvent);
   } else {
     switch (stateCategory) {
-      case "favorite":
+      case 'favorite':
         stateImmutable.addEvent(stateCategory, currentEvent);
         break;
-      case "going":
+      case 'going':
         stateImmutable.addEvent(stateCategory, currentEvent);
-        stateImmutable.removeEvent("interested", currentEvent);
+        stateImmutable.removeEvent('interested', currentEvent);
         break;
       default:
         stateImmutable.addEvent(stateCategory, currentEvent);
-        stateImmutable.removeEvent("going", currentEvent);
+        stateImmutable.removeEvent('going', currentEvent);
         break;
     }
   }
 };
 
 const handleAccountState = (category, button) => {
-  const event = stateImmutable.getEvent(category, button.id)
+  const event = stateImmutable.getEvent(category, button.id);
   stateImmutable.removeEvent(category, event);
-  const message = document.querySelector(`span[id="${button.id}"]`)
-  message.innerHTML = 'Event successfully removed'
-  button.remove()
-}
+  const message = document.querySelector(`span[id="${button.id}"]`);
+  message.innerHTML = 'Event successfully removed';
+  button.remove();
+};
 
 const BtnClickHandler = (category) => {
   const { page } = accountTab();
-  if (page === "index.html") {
-    const buttons = document.querySelectorAll(".js-event-btn");
+  if (page === 'index.html') {
+    const buttons = document.querySelectorAll('.js-event-btn');
 
-    buttons.forEach((element) =>
-      element.addEventListener("click", () => {
-        handleState(category, element);
-      })
-    );
+    buttons.forEach((element) => element.addEventListener('click', () => {
+      handleState(category, element);
+    }));
   } else {
-    const buttons = document.querySelectorAll('.js-event-btn-account')
+    const buttons = document.querySelectorAll('.js-event-btn-account');
     if (buttons.length) {
-      buttons.forEach(element => element.addEventListener('click', () => {
-        handleAccountState(category, element)
-      }))
-    } else {
-      return
+      buttons.forEach((element) => element.addEventListener('click', () => {
+        handleAccountState(category, element);
+      }));
     }
   }
 };

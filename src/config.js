@@ -1,41 +1,41 @@
 const eventCategory = [
   {
-    category: "music",
+    category: 'music',
     active: false,
   },
   {
-    category: "art",
+    category: 'art',
     active: false,
   },
   {
-    category: "food",
+    category: 'food',
     active: false,
   },
   {
-    category: "business",
+    category: 'business',
     active: false,
   },
   {
-    category: "sports",
+    category: 'sports',
     active: false,
   },
 ];
 
 const accountCategory = [
   {
-    category: "favorite",
+    category: 'favorite',
     active: false,
   },
   {
-    category: "interested",
+    category: 'interested',
     active: false,
   },
   {
-    category: "going",
+    category: 'going',
     active: false,
   },
   {
-    category: "calendar",
+    category: 'calendar',
     active: false,
   },
 ];

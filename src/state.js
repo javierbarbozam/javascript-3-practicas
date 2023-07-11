@@ -28,7 +28,7 @@ const userState = {
   },
 
   getLocalState() {
-    const localState = JSON.parse(localStorage.getItem("state"));
+    const localState = JSON.parse(localStorage.getItem('state'));
     if (localState) {
       state.favorite = localState.favorite || [];
       state.interested = localState.interested || [];
@@ -38,7 +38,7 @@ const userState = {
   },
 
   saveState() {
-    localStorage.setItem("state", JSON.stringify(state));
+    localStorage.setItem('state', JSON.stringify(state));
   },
 
   setState(newState) {
