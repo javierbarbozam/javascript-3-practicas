@@ -68,6 +68,11 @@
   gap: 10px;
 }
 
+.event-item__btn-wrapper--active {
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .event-item__btn {
   background: none;
   border: none;

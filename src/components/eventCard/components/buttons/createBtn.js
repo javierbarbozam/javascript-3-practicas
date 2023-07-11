@@ -23,7 +23,7 @@ const homeEventBtn = (id) => {
       </button>`;
     }
   });
-  let container = `<div class="event-item__btn-wrapper">${favoriteBtn}${buttons}</div>`
+  let container = `<div id="${id}" class="event-item__btn-wrapper">${favoriteBtn}${buttons}</div>`
   return container;
 };
 

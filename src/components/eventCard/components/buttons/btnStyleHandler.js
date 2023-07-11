@@ -6,17 +6,23 @@ const handleBtnStyle = (category, element) => {
   switch (category) {
     case "going":
       element.classList.toggle("event-item__btn--active");
-      const interestedBtn = document.querySelector(`button[value="interested"][id="${element.id}"]`);
+      const interestedBtn = document.querySelector(
+        `button[value="interested"][id="${element.id}"]`
+      );
       interestedBtn.style.display = activeClass ? "block" : "none";
       element.innerHTML = activeClass
         ? category
         : `You are ${category}. Changed your mind?`;
       break;
     case "interested":
+      const btnContainer = document.querySelector(`div[id="${element.id}"]`);
+      btnContainer.style;
       element.classList.toggle("event-item__btn--active");
-      element.innerHTML = activeClass
-        ? category
-        : `You are ${category}. Changed your mind?`;
+      activeClass
+        ? ((element.innerHTML = category),
+          (btnContainer.classList.toggle('event-item__btn-wrapper--active')))
+        : ((element.innerHTML = `You are ${category}. Changed your mind?`),
+          (btnContainer.classList.toggle('event-item__btn-wrapper--active')));
       break;
     default:
       element.classList.toggle("event-item__btn--favorite--active");
