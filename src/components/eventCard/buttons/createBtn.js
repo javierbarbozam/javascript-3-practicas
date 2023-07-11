@@ -31,9 +31,10 @@ const accountEventBtn = (category, id) => {
   let btn = "";
   category === "calendar"
     ? null
-    : (btn += `<span>Not ${category} anymore?</span>
-    <button value="${category}" id="${id}">Remove</button>`);
-  return btn;
+    : (btn += `<span id=${id}>Not ${category} anymore?</span>
+    <button class="js-event-btn-account  event-item__btn--active" value="${category}" id="${id}">Remove</button>`);
+    let container = `<div id="${id}" class="event-item__btn-wrapper">${btn}</div>`
+  return container;
 };
 
 const createBtn = (id) => {

@@ -70,6 +70,7 @@ const initAccountEvents = () => {
   } else {
     const events = getEventAccount(category);
     showEvents(events);
+    BtnClickHandler(category)
   }
 };
 

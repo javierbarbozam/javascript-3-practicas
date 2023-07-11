@@ -1,7 +1,7 @@
 import { accountCategory, eventCategory } from "../config.js";
 
 const accountTab = () => {
-  // Makes sure if we are inside events or account page
+  // Makes sure if we are at events or account page
   const path = new URL(window.location).pathname;
   const page = path.split("/").pop();
   
