@@ -1,5 +1,5 @@
-import { cardContent } from "../eventCard/components/showEvent.js";
-import { stateImmutable } from "../state/state.js";
+import { cardContent } from "./eventCard/showEvent.js";
+import { stateImmutable } from "../state.js";
 
 let currentMonth = 0;
 const weekdays = [

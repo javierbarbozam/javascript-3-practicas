@@ -1,3 +1,10 @@
+.main-content__message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .event {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -11,6 +18,7 @@
   overflow: hidden;
   transition: ease-in-out 0.3s;
   list-style: none;
+  position: relative;
 }
 
 .event-item:hover {
@@ -63,34 +71,44 @@
 }
 
 .event-item__btn-wrapper {
-  position: relative;
   display: flex;
   gap: 10px;
+}
+
+.event-item__btn-wrapper--active {
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .event-item__btn {
   background: none;
   border: none;
   cursor: pointer;
+  background-color:  rgb(62, 135, 142);
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 5px;
+  border-radius: 2px;
 }
 
 .event-item__btn::first-letter {
   text-transform: uppercase;
 }
 
-.event-item__btn--state {
-  background-color:  rgb(62, 135, 142);
-  color: white;
+.event-item__btn--active {
+  background-color: transparent;
+  color: rgb(62, 135, 142);
+  text-decoration: underline;
   border: none;
-  width: 50%;
-  padding: 5px;
-  border-radius: 2px;
+  padding: 0;
 }
 
 .event-item__btn--favorite {
+  width: initial;
   position: absolute;
-  right: 0;
-  top: -480%;
+  right: 3%;
+  top: 28%;
   display: flex;
   justify-content: center;
   align-items: center;
