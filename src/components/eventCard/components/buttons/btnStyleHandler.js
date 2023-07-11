@@ -1,3 +1,5 @@
+import { stateImmutable } from "../../../state.js";
+
 const handleBtnStyle = (category, element) => {
   const activeClass = element.classList.contains("event-item__btn--active");
 
@@ -6,11 +8,15 @@ const handleBtnStyle = (category, element) => {
       element.classList.toggle("event-item__btn--active");
       const interestedBtn = document.querySelector(`button[value="interested"][id="${element.id}"]`);
       interestedBtn.style.display = activeClass ? "block" : "none";
-      element.innerHTML = activeClass ? category : `You are ${category}. Changed your mind?`;
+      element.innerHTML = activeClass
+        ? category
+        : `You are ${category}. Changed your mind?`;
       break;
     case "interested":
       element.classList.toggle("event-item__btn--active");
-      element.innerHTML = activeClass ? category : `You are ${category}. Changed your mind?`;
+      element.innerHTML = activeClass
+        ? category
+        : `You are ${category}. Changed your mind?`;
       break;
     default:
       element.classList.toggle("event-item__btn--favorite--active");
@@ -18,21 +24,15 @@ const handleBtnStyle = (category, element) => {
   }
 };
 
-function findObjectById(id) {
-  let foundObject = null;
-  let foundArray = null;
+const initBtnStyles = () => {
+  const events = stateImmutable.getState();
+  const eventButtons = document.querySelectorAll(".js-event-btn");
+  eventButtons.forEach((element) => {
+    const findEvent = events[element.value].find(
+      (event) => event.id === element.id
+    );
+    findEvent ? handleBtnStyle(element.value, element) : null;
+  });
+};
 
-  for (let key in stateImmutable) {
-    if (Array.isArray(stateImmutable[key])) {
-      foundObject = stateImmutable[key].find((obj) => obj.id === id);
-      if (foundObject) {
-        foundArray = key;
-        break;
-      }
-    }
-  }
-
-  return { element: foundObject, array: foundArray };
-}
-
-export { handleBtnStyle };
+export { handleBtnStyle, initBtnStyles };
