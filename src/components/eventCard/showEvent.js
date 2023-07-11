@@ -1,26 +1,26 @@
-import { initCalendar } from "../calendar.js";
-import { BtnClickHandler } from "./buttons/btnClickHandler.js";
-import { initBtnStyles } from "./buttons/btnStyleHandler.js";
-import { createBtn } from "./buttons/createBtn.js";
-import { getAccountCategory, getCategory } from "./getCategory.js";
-import { getEventAccount, getEventCategory } from "./getEvent.js";
+import { initCalendar } from '../calendar.js';
+import { BtnClickHandler } from './buttons/btnClickHandler.js';
+import { initBtnStyles } from './buttons/btnStyleHandler.js';
+import { createBtn } from './buttons/createBtn.js';
+import { getAccountCategory, getCategory } from './getCategory.js';
+import { getEventAccount, getEventCategory } from './getEvent.js';
 
 const getPrice = (value) => {
-  let price = "";
-  value === 0 ? (price = "Free") : (price = `$${value.toFixed(2)}`);
+  let price = '';
+  value === 0 ? (price = 'Free') : (price = `$${value.toFixed(2)}`);
   return price;
 };
 
 const getDate = (value) => {
   const date = new Date(value);
   const options = {
-    month: "short",
-    day: "numeric",
-    weekday: "short",
-    hour: "numeric",
-    minute: "numeric",
+    month: 'short',
+    day: 'numeric',
+    weekday: 'short',
+    hour: 'numeric',
+    minute: 'numeric',
   };
-  return date.toLocaleDateString("en-us", options);
+  return date.toLocaleDateString('en-us', options);
 };
 
 const cardContent = (element) => {
@@ -42,12 +42,12 @@ const cardContent = (element) => {
 
 const showEvents = (value) => {
   if (!value) {
-    const container = document.getElementById("main-content");
-    const message = '<p class="main-content__message">No events added</p>'
-    container.insertAdjacentHTML('afterbegin', message)
+    const container = document.getElementById('main-content');
+    const message = '<p class="main-content__message">No events added</p>';
+    container.insertAdjacentHTML('afterbegin', message);
   } else {
-    const container = document.getElementById("event-list");
-    let eventList = "";
+    const container = document.getElementById('event-list');
+    let eventList = '';
     value.forEach((element) => {
       eventList += cardContent(element);
     });
@@ -65,11 +65,12 @@ const initHomeEvents = async () => {
 
 const initAccountEvents = () => {
   const category = getAccountCategory();
-  if (category === "calendar") {
+  if (category === 'calendar') {
     initCalendar();
   } else {
     const events = getEventAccount(category);
     showEvents(events);
+    BtnClickHandler(category);
   }
 };
 
