@@ -1,6 +1,6 @@
-import { accountTab } from "../../tabs/accountTab.js";
 import { getAccountCategory } from "../getCategory.js";
 import { accountCategory } from "../../../config.js";
+import { accountTab } from "../../tabs.js";
 
 const homeEventBtn = (id) => {
   const categories = accountCategory.filter((element) => element.category !== "calendar");

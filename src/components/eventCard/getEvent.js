@@ -17,7 +17,6 @@ const getEventAccount = (value) => {
   if (events[value].length) {
     return events[value];
   } else {
-    console.log('No hay eventos')
     return 
   }
 };

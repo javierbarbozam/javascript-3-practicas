@@ -1,5 +1,5 @@
-import { initAccountTabs } from "./components/initTabs.js"
-import { initAccountEvents } from "./components/initAccountEvents.js"
+import { initAccountEvents } from "../../src/components/eventCard/showEvent.js"
+import { initAccountTabs } from "../../src/components/tabs.js"
 
 initAccountTabs()
 initAccountEvents()
