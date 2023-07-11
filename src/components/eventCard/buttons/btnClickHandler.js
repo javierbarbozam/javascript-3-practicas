@@ -2,6 +2,7 @@ import { cacheProxy } from "../../../cache.js";
 import { stateImmutable } from "../../../state.js";
 import { handleBtnStyle } from "./btnStyleHandler.js";
 
+
 const eventFromCache = (category, element) => {
   const eventId = element.id;
   const events = cacheProxy[category];

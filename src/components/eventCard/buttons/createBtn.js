@@ -1,4 +1,4 @@
-import { accountTab } from "../../../tabs/components/accountTab.js";
+import { accountTab } from "../../tabs/accountTab.js";
 import { getAccountCategory } from "../getCategory.js";
 import { accountCategory } from "../../../config.js";
 

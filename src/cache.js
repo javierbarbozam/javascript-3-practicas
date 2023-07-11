@@ -1,4 +1,4 @@
-import { DataStorage } from "./localStorage/localStorage.js";
+import { DataStorage } from "./localStorage.js";
 
 const eventCache = new DataStorage('eventCache')
 
