@@ -1,0 +1,24 @@
+{
+  "name": "javascript-plant-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javierbarbozam/javascript-3-practicas.git"
+  },
+  "author": "Javier Barboza Muñoz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/javierbarbozam/javascript-3-practicas/issues"
+  },
+  "homepage": "https://github.com/javierbarbozam/javascript-3-practicas#readme",
+  "devDependencies": {
+    "eslint": "^8.45.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5"
+  }
+}
