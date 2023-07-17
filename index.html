@@ -11,53 +11,53 @@
       <form action="">
         <fieldset>
           <legend>Where will you place your plant?</legend>
-          <input type="radio" name="place" value="low-light" required>
-          <label for="place">Inside, with some indirect light</label>
-          <input type="radio" name="place" value="medium-light">
-          <label for="place">Inside, with a lot of indirect light</label>
-          <input type="radio" name="place" value="outside">
-          <label for="place">Outside</label>
+          <input type="radio" name="lightQuantity" id="low-light" value="low-light" required>
+          <label for="low-light">Inside, with some indirect light</label>
+          <input type="radio" name="lightQuantity" id="medium-light" value="medium-light">
+          <label for="medium-light">Inside, with a lot of indirect light</label>
+          <input type="radio" name="lightQuantity" id="outside" value="outside">
+          <label for="outside">Outside</label>
         </fieldset>
         <fieldset>
           <legend>Will it receive direct sunlight?</legend>
-          <input type="radio" name="sunlight" value="true" required>
-          <label for="place">Yes</label>
-          <input type="radio" name="sunlight" value="false">
-          <label for="place">No</label>
+          <input type="radio" name="soil" id="composed" value="composed" required>
+          <label for="composed">Yes</label>
+          <input type="radio" name="soil" id="fertilized" value="fertilized">
+          <label for="fertilized">No</label>
         </fieldset>
         <fieldset>
           <legend>Do you have pats (cats or dogs)?</legend>
-          <input type="radio" name="pets" value="true" required>
-          <label for="place">Yes</label>
-          <input type="radio" name="pets" value="false">
-          <label for="place">No</label>
+          <input type="radio" name="pets" id="has-pet" value="has-pet" required>
+          <label for="has-pet">Yes</label>
+          <input type="radio" name="pets"  id="has-no-pet" value="has-no-pet">
+          <label for="has-no-pet">No</label>
         </fieldset>
         <fieldset>
           <legend>Do you tend to overwater or underwater your plants?</legend>
-          <input type="radio" name="water-quantity" value="overwater" required>
-          <label for="place">Overwater</label>
-          <input type="radio" name="water-quantity" value="underwater">
-          <label for="place">Underwater</label>
-          <input type="radio" name="water-quantity" value="none">
-          <label for="place">Neither</label>
+          <input type="radio" name="watering" id="overwater" value="overwater" required>
+          <label for="overwater">Overwater</label>
+          <input type="radio" name="watering" id="underwater" value="underwater">
+          <label for="underwater">Underwater</label>
+          <input type="radio" name="watering" id="watering-none" value="watering-none">
+          <label for="watering-none">Neither</label>
         </fieldset>
         <fieldset>
           <legend>How do you define your style?</legend>
-          <input type="radio" name="pot-style" value="simple" required>
-          <label for="place">I like minimalism and material colors</label>
-          <input type="radio" name="pot-style" value="simple-decorated">
-          <label for="place">I like some decoration and simple colors</label>
-          <input type="radio" name="pot-style" value="painted-decorated">
-          <label for="place">I like a lot of decoration and bright colors</label>
+          <input type="radio" name="pot_style" id="simple" value="simple" required>
+          <label for="simple">I like minimalism and material colors</label>
+          <input type="radio" name="pot_style" id="simple-decorated" value="simple-decorated">
+          <label for="simple-decorated">I like some decoration and simple colors</label>
+          <input type="radio" name="pot_style" id="painted-decorated" value="painted-decorated">
+          <label for="painted-decorated">I like a lot of decoration and bright colors</label>
         </fieldset>
         <fieldset>
           <legend>Do you want to add any extra elements to your plant?</legend>
-          <input type="checkbox" name="extras" value="moss-pole">
-          <label for="place">Moss pole</label>
-          <input type="checkbox" name="extras" value="pebbles">
-          <label for="place">Pebbles</label>
-          <input type="checkbox" name="extras" value="mini-plants">
-          <label for="place">Mini plants</label>
+          <input type="checkbox" name="extras" id="moss-pole" value="moss-pole">
+          <label for="moss-pole">Moss pole</label>
+          <input type="checkbox" name="extras" id="pebbles" value="pebbles">
+          <label for="pebbles">Pebbles</label>
+          <input type="checkbox" name="extras" id="mini-plants" value="mini-plants">
+          <label for="mini-plants">Mini plants</label>
         </fieldset>
         <button type="submit">Get your plant!</button>
         <button type="reset">Clear</button>
@@ -65,5 +65,6 @@
     </section>
     <section></section>
   </main>
+  <script type="module" src="./src/js/main.js"></script>
 </body>
 </html>
