@@ -3,7 +3,7 @@ import { plantConfig } from '../plant-config.js';
 
 const getFormData = () => {
   return new Promise((resolve) => {
-    const form = document.querySelector('form');
+    const form = document.getElementById('plant-form');
     form.addEventListener('submit', (e) => {
       e.preventDefault();
 

@@ -1,70 +1,153 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plant Project</title>
-</head>
-<body>
-  <main>
-    <section>
-      <form action="">
-        <fieldset>
-          <legend>Where will you place your plant?</legend>
-          <input type="radio" name="lightQuantity" id="low-light" value="low-light" required>
-          <label for="low-light">Inside, with some indirect light</label>
-          <input type="radio" name="lightQuantity" id="medium-light" value="medium-light">
-          <label for="medium-light">Inside, with a lot of indirect light</label>
-          <input type="radio" name="lightQuantity" id="outside" value="outside">
-          <label for="outside">Outside</label>
-        </fieldset>
-        <fieldset>
-          <legend>Will it receive direct sunlight?</legend>
-          <input type="radio" name="soil" id="composed" value="composed" required>
-          <label for="composed">Yes</label>
-          <input type="radio" name="soil" id="fertilized" value="fertilized">
-          <label for="fertilized">No</label>
-        </fieldset>
-        <fieldset>
-          <legend>Do you have pats (cats or dogs)?</legend>
-          <input type="radio" name="pets" id="has-pet" value="has-pet" required>
-          <label for="has-pet">Yes</label>
-          <input type="radio" name="pets"  id="has-no-pet" value="has-no-pet">
-          <label for="has-no-pet">No</label>
-        </fieldset>
-        <fieldset>
-          <legend>Do you tend to overwater or underwater your plants?</legend>
-          <input type="radio" name="watering" id="overwater" value="overwater" required>
-          <label for="overwater">Overwater</label>
-          <input type="radio" name="watering" id="underwater" value="underwater">
-          <label for="underwater">Underwater</label>
-          <input type="radio" name="watering" id="watering-none" value="watering-none">
-          <label for="watering-none">Neither</label>
-        </fieldset>
-        <fieldset>
-          <legend>How do you define your style?</legend>
-          <input type="radio" name="pot_style" id="simple" value="simple" required>
-          <label for="simple">I like minimalism and material colors</label>
-          <input type="radio" name="pot_style" id="simple-decorated" value="simple-decorated">
-          <label for="simple-decorated">I like some decoration and simple colors</label>
-          <input type="radio" name="pot_style" id="painted-decorated" value="painted-decorated">
-          <label for="painted-decorated">I like a lot of decoration and bright colors</label>
-        </fieldset>
-        <fieldset>
-          <legend>Do you want to add any extra elements to your plant?</legend>
-          <input type="checkbox" name="extras" id="moss-pole" value="moss-pole">
-          <label for="moss-pole">Moss pole</label>
-          <input type="checkbox" name="extras" id="pebbles" value="pebbles">
-          <label for="pebbles">Pebbles</label>
-          <input type="checkbox" name="extras" id="mini-plants" value="mini-plants">
-          <label for="mini-plants">Mini plants</label>
-        </fieldset>
-        <button type="submit">Get your plant!</button>
-        <button type="reset">Clear</button>
-      </form>
-    </section>
-    <section></section>
-  </main>
-  <script type="module" src="./src/js/main.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plant Project</title>
+  </head>
+  <body>
+    <main>
+      <section class="form-wrapper">
+        <form action="" id="plant-form">
+          <fieldset>
+            <legend>Where will you place your plant?</legend>
+            <input
+              type="radio"
+              name="lightQuantity"
+              id="low-light"
+              value="low_light"
+              required
+            />
+            <label for="low-light">Inside, with some indirect light</label>
+            <input
+              type="radio"
+              name="lightQuantity"
+              id="medium-light"
+              value="medium_light"
+            />
+            <label for="medium-light"
+              >Inside, with a lot of indirect light</label
+            >
+            <input
+              type="radio"
+              name="lightQuantity"
+              id="outside"
+              value="outdoor"
+            />
+            <label for="outside">Outside</label>
+          </fieldset>
+          <fieldset>
+            <legend>Will it receive direct sunlight?</legend>
+            <input
+              type="radio"
+              name="soil"
+              id="composed"
+              value="composed"
+              required
+            />
+            <label for="composed">Yes</label>
+            <input
+              type="radio"
+              name="soil"
+              id="fertilized"
+              value="fertilized"
+            />
+            <label for="fertilized">No</label>
+          </fieldset>
+          <fieldset>
+            <legend>Do you have pets (cats or dogs)?</legend>
+            <input
+              type="radio"
+              name="toxic_plant"
+              id="isToxic"
+              value="non_toxic"
+              required
+            />
+            <label for="isToxic">Yes</label>
+            <input type="radio" name="toxic_plant" id="noToxic" value="toxic" />
+            <label for="noToxic">No</label>
+          </fieldset>
+          <fieldset>
+            <legend>Do you tend to overwater or underwater your plants?</legend>
+            <input
+              type="radio"
+              name="watering"
+              id="overwater"
+              value="overwater"
+              required
+            />
+            <label for="overwater">Overwater</label>
+            <input
+              type="radio"
+              name="watering"
+              id="underwater"
+              value="underwater"
+            />
+            <label for="underwater">Underwater</label>
+            <input
+              type="radio"
+              name="watering"
+              id="watering-none"
+              value="watering-none"
+            />
+            <label for="watering-none">Neither</label>
+          </fieldset>
+          <fieldset>
+            <legend>How do you define your style?</legend>
+            <input
+              type="radio"
+              name="pot_style"
+              id="simple"
+              value="simple"
+              required
+            />
+            <label for="simple">I like minimalism and material colors</label>
+            <input
+              type="radio"
+              name="pot_style"
+              id="simple-decorated"
+              value="simple-decorated"
+            />
+            <label for="simple-decorated"
+              >I like some decoration and simple colors</label
+            >
+            <input
+              type="radio"
+              name="pot_style"
+              id="painted-decorated"
+              value="painted-decorated"
+            />
+            <label for="painted-decorated"
+              >I like a lot of decoration and bright colors</label
+            >
+          </fieldset>
+          <fieldset>
+            <legend>
+              Do you want to add any extra elements to your plant?
+            </legend>
+            <input
+              type="checkbox"
+              name="extras"
+              id="moss-pole"
+              value="moss-pole"
+            />
+            <label for="moss-pole">Moss pole</label>
+            <input type="checkbox" name="extras" id="pebbles" value="pebbles" />
+            <label for="pebbles">Pebbles</label>
+            <input
+              type="checkbox"
+              name="extras"
+              id="mini-plants"
+              value="mini-plants"
+            />
+            <label for="mini-plants">Mini plants</label>
+          </fieldset>
+          <button type="submit">Get your plant!</button>
+          <button type="reset">Clear</button>
+        </form>
+      </section>
+      <section class="plant"></section>
+    </main>
+    <script type="module" src="./src/index.js"></script>
+  </body>
 </html>
