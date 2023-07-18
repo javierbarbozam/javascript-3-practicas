@@ -1,4 +1,9 @@
 class Plant {
+  setName(name) {
+    this.name = name;
+    return this;
+  }
+
   lightQuantity(value) {
     this.light = value;
     return this;
