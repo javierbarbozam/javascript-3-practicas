@@ -1,5 +1,3 @@
-import '../../styles/styles.css';
-
 const renderPlant = (plant) => {
   const container = document.querySelector('.plant');
 
