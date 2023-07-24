@@ -1,16 +1,13 @@
 const renderPlant = (plant) => {
-  const container = document.querySelector('.plant');
-
-  // card container
-  const card = document.createElement('div');
-  card.classList.add('plant-card');
+  const container = document.querySelector('.plant-card');
+  container.innerHTML = '';
 
   // card title
-  const cardTitle = document.createElement('div');
-  cardTitle.classList.add('plant-card__title');
-  cardTitle.innerHTML = `
-  <span class="">The perfect plant for you is...</span>
-  <span class="">${plant.name}</span>`;
+  const cardHeader = document.createElement('div');
+  cardHeader.classList.add('plant-card__header');
+  cardHeader.innerHTML = `
+  <span class="plant-card__header-text">The perfect plant for you is...</span>
+  <span class="plant-card__header-title">${plant.name}</span>`;
 
   // card images
 
@@ -18,18 +15,20 @@ const renderPlant = (plant) => {
   const cardInfo = document.createElement('dl');
   cardInfo.classList.add('plant-card__info');
   cardInfo.innerHTML = `
-  <div class="plant-card__info-item">
-    <dt>Name</dt>
-    <dd>${plant.name}</dd>
-  </div>
-  <div class="plant-card__info-item">
-    <dt>Soil</dt>
-    <dd>${plant.soil} soil</dd>
-  </div>
-  <div class="plant-card__info-item">
-    <dt>Pot</dt>
-    <dd>${plant.potDecoration} ${plant.potMaterial} pot</dd>
-  </div>`;
+  <table class="plant-card__info">
+    <tr class="plant-card__info-item">
+      <td>Name</td>
+      <td>${plant.name}</td>
+    </tr>
+    <tr class="plant-card__info-item">
+      <td>Soil</td>
+      <td>${plant.soil} soil</td>
+    </tr>
+    <tr class="plant-card__info-item">
+      <td>Pot</td>
+      <td>${plant.potDecoration} ${plant.potMaterial} pot</td>
+    </tr>
+  </table>`;
 
   if (plant.extras) {
     // create extras element
@@ -46,9 +45,8 @@ const renderPlant = (plant) => {
     cardInfo.insertAdjacentElement('beforeend', extras);
   }
 
-  card.appendChild(cardTitle);
-  card.appendChild(cardInfo);
-  container.appendChild(card);
+  container.appendChild(cardHeader);
+  container.appendChild(cardInfo);
 };
 
 export { renderPlant };

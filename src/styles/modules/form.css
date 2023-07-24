@@ -1,0 +1,24 @@
+.plant-form {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.plant-form-fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.plant-form-legend {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: rgb(101, 101, 101);
+}
+
+.plant-form-input {
+  accent-color: #7a5cfa;
+}

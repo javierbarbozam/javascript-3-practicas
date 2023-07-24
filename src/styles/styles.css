@@ -1,4 +1,4 @@
-html {
-  font-family: sans-serif;
-  background-color: pink;
-}
+@import url('./modules/general-rules.css');
+@import url('./modules/form.css');
+@import url('./modules/button.css');
+@import url('./modules/plant-card.css');
