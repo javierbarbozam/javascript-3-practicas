@@ -16,6 +16,8 @@ const getFormData = () => {
       const formData = Object.fromEntries(res);
       formData.extras = extras;
 
+      form.reset();
+
       resolve(formData);
     });
   });
@@ -37,7 +39,7 @@ const setPlantName = (data) => {
   return name;
 };
 
-const setPlantData = async () => {
+const PlantData = async () => {
   const data = await getFormData();
   const plant = new Plant();
   const name = setPlantName(data);
@@ -66,4 +68,4 @@ const setPlantData = async () => {
   return plant;
 };
 
-export { setPlantData };
+export { PlantData };
