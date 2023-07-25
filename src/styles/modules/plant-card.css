@@ -66,11 +66,63 @@
 }
 
 .plant-card__info {
-  height: 150px;
+  background-color: #7a5cfa;
+  color: white;
+  padding: 20px;
+  display: flex;
+  height: fit-content
+}
+
+td {
+  padding: 2px 0;
+}
+
+tbody {
   margin: 0 auto;
 }
 
-.plant-card__info-item dt {
+.plant-card__info-title {
   text-align: right;
   padding-right: 10px;
+  border-right: solid 2px white;
+}
+
+.plant-card__info-text {
+  padding-left: 10px;
+}
+
+.plant-card__preview {
+  height: 60%;
+  position: relative;
+}
+
+.plant-card__preview {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.plant-card__preview--pot {
+  z-index: 0;
+}
+
+.plant-card__preview--moss-pole {
+  z-index: 1;
+}
+
+.plant-card__preview--pebbles {
+  z-index: 2;
+}
+
+.plant-card__preview--mini-plants {
+  z-index: 3;
+}
+
+.plant-card__preview--plant {
+  z-index: 4;
+}
+
+.plant-card__preview--soil {
+  z-index: 5;
 }
