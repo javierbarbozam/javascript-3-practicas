@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/src/styles/styles.css">
+    <link rel="stylesheet" href="/src/styles/styles.css" />
     <title>Plant Project</title>
   </head>
   <body>
@@ -12,137 +12,165 @@
         <h2 class="title">Let us find the perfect plant for you</h2>
         <form action="" class="plant-form" id="plant-form">
           <fieldset class="plant-form-fieldset">
-            <legend class="plant-form-legend">Where will you place your plant?</legend>
+            <legend class="plant-form-legend">
+              Where will you place your plant?
+            </legend>
             <div class="plant-form-box">
-              <input class="plant-form-input"
-              type="radio"
-              name="lightQuantity"
-              id="low-light"
-              value="low_light"
-              required
+              <input
+                class="plant-form-input"
+                type="radio"
+                name="lightQuantity"
+                id="low-light"
+                value="low_light"
+                required
               />
               <label for="low-light">Inside, with some indirect light</label>
             </div>
             <div class="plant-form-box">
-              <input class="plant-form-input"
-              type="radio"
-              name="lightQuantity"
-              id="medium-light"
-              value="medium_light"
+              <input
+                class="plant-form-input"
+                type="radio"
+                name="lightQuantity"
+                id="medium-light"
+                value="medium_light"
               />
               <label for="medium-light"
                 >Inside, with a lot of indirect light</label
               >
             </div>
             <div class="plant-form-box">
-              <input class="plant-form-input"
-              type="radio"
-              name="lightQuantity"
-              id="outside"
-              value="outdoor"
+              <input
+                class="plant-form-input"
+                type="radio"
+                name="lightQuantity"
+                id="outside"
+                value="outdoor"
               />
               <label for="outside">Outside</label>
             </div>
           </fieldset>
           <fieldset class="plant-form-fieldset">
-            <legend class="plant-form-legend">Will it receive direct sunlight?</legend>
+            <legend class="plant-form-legend">
+              Will it receive direct sunlight?
+            </legend>
             <div class="plant-form-box">
-              <input class="plant-form-input"
-              type="radio"
-              name="soil"
-              id="composted"
-              value="composted"
-              required
+              <input
+                class="plant-form-input"
+                type="radio"
+                name="soil"
+                id="composted"
+                value="composted"
+                required
               />
               <label for="composted">Yes</label>
             </div>
             <div class="plant-form-box">
-              <input class="plant-form-input"
-              type="radio"
-              name="soil"
-              id="fertilized"
-              value="fertilized"
+              <input
+                class="plant-form-input"
+                type="radio"
+                name="soil"
+                id="fertilized"
+                value="fertilized"
               />
               <label for="fertilized">No</label>
             </div>
           </fieldset>
           <fieldset class="plant-form-fieldset">
-            <legend class="plant-form-legend">Do you have pets (cats or dogs)?</legend>
+            <legend class="plant-form-legend">
+              Do you have pets (cats or dogs)?
+            </legend>
             <div class="plant-form-box">
-              <input class="plant-form-input"
-              type="radio"
-              name="toxic_plant"
-              id="isToxic"
-              value="non_toxic"
-              required
+              <input
+                class="plant-form-input"
+                type="radio"
+                name="toxic_plant"
+                id="isToxic"
+                value="non_toxic"
+                required
               />
               <label for="isToxic">Yes</label>
             </div>
             <div class="plant-form-box">
-              <input class="plant-form-input" type="radio" name="toxic_plant" id="noToxic" value="toxic" />
+              <input
+                class="plant-form-input"
+                type="radio"
+                name="toxic_plant"
+                id="noToxic"
+                value="toxic"
+              />
               <label for="noToxic">No</label>
             </div>
           </fieldset>
           <fieldset class="plant-form-fieldset">
-            <legend class="plant-form-legend">Do you tend to overwater or underwater your plants?</legend>
+            <legend class="plant-form-legend">
+              Do you tend to overwater or underwater your plants?
+            </legend>
             <div class="plant-form-box">
-              <input class="plant-form-input"
-              type="radio"
-              name="watering"
-              id="overwater"
-              value="overwater"
-              required
+              <input
+                class="plant-form-input"
+                type="radio"
+                name="watering"
+                id="overwater"
+                value="overwater"
+                required
               />
               <label for="overwater">Overwater</label>
             </div>
             <div class="plant-form-box">
-              <input class="plant-form-input"
-              type="radio"
-              name="watering"
-              id="underwater"
-              value="underwater"
+              <input
+                class="plant-form-input"
+                type="radio"
+                name="watering"
+                id="underwater"
+                value="underwater"
               />
               <label for="underwater">Underwater</label>
             </div>
             <div class="plant-form-box">
-              <input class="plant-form-input"
-              type="radio"
-              name="watering"
-              id="watering-none"
-              value="watering-none"
+              <input
+                class="plant-form-input"
+                type="radio"
+                name="watering"
+                id="watering-none"
+                value="watering-none"
               />
               <label for="watering-none">Neither</label>
             </div>
           </fieldset>
           <fieldset class="plant-form-fieldset">
-            <legend class="plant-form-legend">How do you define your style?</legend>
+            <legend class="plant-form-legend">
+              How do you define your style?
+            </legend>
             <div class="plant-form-box">
-              <input class="plant-form-input"
-              type="radio"
-              name="pot_style"
-              id="simple"
-              value="simple"
-              required
+              <input
+                class="plant-form-input"
+                type="radio"
+                name="pot_style"
+                id="simple"
+                value="simple"
+                required
               />
               <label for="simple">I like minimalism and material colors</label>
             </div>
             <div class="plant-form-box">
-              <input class="plant-form-input"
-              type="radio"
-              name="pot_style"
-              id="simple-decorated"
-              value="simple-decorated"
+              <input
+                class="plant-form-input"
+                type="radio"
+                name="pot_style"
+                id="simple-decorated"
+                value="simple-decorated"
               />
               <label for="simple-decorated"
                 >I like some decoration and simple colors</label
               >
             </div>
             <div class="plant-form-box">
-              <input class="plant-form-input"
-              type="radio"
-              name="pot_style"
-              id="painted-decorated"
-              value="painted-decorated"
+              <input
+                class="plant-form-input"
+                type="radio"
+                name="pot_style"
+                id="painted-decorated"
+                value="painted-decorated"
               />
               <label for="painted-decorated"
                 >I like a lot of decoration and bright colors</label
@@ -154,24 +182,32 @@
               Do you want to add any extra elements to your plant?
             </legend>
             <div class="plant-form-box">
-              <input class="plant-form-input"
-              type="checkbox"
-              name="extras"
-              id="moss-pole"
-              value="moss-pole"
+              <input
+                class="plant-form-input"
+                type="checkbox"
+                name="extras"
+                id="moss-pole"
+                value="moss-pole"
               />
               <label for="moss-pole">Moss pole</label>
             </div>
             <div class="plant-form-box">
-              <input class="plant-form-input" type="checkbox" name="extras" id="pebbles" value="pebbles" />
+              <input
+                class="plant-form-input"
+                type="checkbox"
+                name="extras"
+                id="pebbles"
+                value="pebbles"
+              />
               <label for="pebbles">Pebbles</label>
             </div>
             <div class="plant-form-box">
-              <input class="plant-form-input"
-              type="checkbox"
-              name="extras"
-              id="mini-plants"
-              value="mini-plants"
+              <input
+                class="plant-form-input"
+                type="checkbox"
+                name="extras"
+                id="mini-plants"
+                value="mini-plants"
               />
               <label for="mini-plants">Mini plants</label>
             </div>
@@ -185,12 +221,14 @@
       <section class="plant">
         <div class="plant-card">
           <div class="plant-card__header--default">
-            <p class="plant-card__header-title--default">Complete the form to find the perfect plant for you!</p>
+            <p class="plant-card__header-title--default">
+              Complete the form to find the perfect plant for you!
+            </p>
           </div>
           <span class="plant-card-question-mark">?</span>
         </div>
       </section>
     </main>
-    <script type="module" src="./src/index.js"></script>
+    <script type="module" src="/src/index.js"></script>
   </body>
 </html>

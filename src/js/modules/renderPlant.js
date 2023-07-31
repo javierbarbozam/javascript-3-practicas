@@ -1,3 +1,5 @@
+import { initCustomizeForm } from '../customize-form.js';
+
 const plantTitle = (plant) => {
   const cardHeader = document.createElement('div');
   cardHeader.classList.add('plant-card__header');
@@ -79,10 +81,18 @@ const plantPreview = (plant) => {
   return container;
 };
 
+const customizeBtn = () => {
+  const container = document.querySelector('.plant');
+  const btn = document.createElement('button');
+  btn.classList.add('btn');
+  btn.innerHTML = 'Customize';
+  btn.addEventListener('click', initCustomizeForm);
+  container.appendChild(btn);
+};
+
 const renderPlant = (plant) => {
   const container = document.querySelector('.plant-card');
   container.innerHTML = '';
-
   const title = plantTitle(plant);
   const info = plantInfo(plant);
   const images = plantPreview(plant);
@@ -90,6 +100,8 @@ const renderPlant = (plant) => {
   container.appendChild(title);
   container.appendChild(images);
   container.appendChild(info);
+
+  customizeBtn();
 };
 
 export { renderPlant };
