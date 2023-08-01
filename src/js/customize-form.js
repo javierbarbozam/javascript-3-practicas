@@ -116,6 +116,10 @@ async function initCustomizeForm() {
   this.removeEventListener('click', initCustomizeForm);
   this.innerHTML = 'Check availability';
   await renderForm();
+  initFormValues();
+  formColorTrigger();
+  handleFormChanges();
+  renderVisualizer();
 }
 
 export { initCustomizeForm };
