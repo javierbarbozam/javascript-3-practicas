@@ -72,16 +72,20 @@ const formColorTrigger = () => {
   if (input.checked) {
     colors.style.display = 'initial';
     label.innerHTML = 'Yes';
+  } else {
+    colors.style.display = 'none';
+    label.innerHTML = 'No';
   }
+
+  const inputColor = document.querySelectorAll('input[name="potColor"]');
+  inputColor.forEach((element) =>
+    element.addEventListener('change', updateFormData),
+  );
 
   input.addEventListener('input', () => {
     if (input.checked) {
       colors.style.display = 'initial';
       label.innerHTML = 'Yes';
-      const inputColor = document.querySelectorAll('input[name="potColor"]');
-      inputColor.forEach((element) =>
-        element.addEventListener('click', updateFormData),
-      );
     } else {
       colors.style.display = 'none';
       label.innerHTML = 'No';
@@ -108,22 +112,18 @@ const handleFormChanges = () => {
   );
 };
 
-function initCustomizeForm() {
-  const customizeBtn = document.getElementById('customize-btn');
-  customizeBtn.addEventListener('click', async () => {
-    document.querySelector('#plant-form').style.display = 'none';
-    document.querySelector('.plant-card__header-title').innerHTML = 'Preview';
-    document.querySelector('.plant-card__header-text').remove();
+async function initCustomizeForm() {
+  document.querySelector('#plant-form').style.display = 'none';
+  document.querySelector('.plant-card__header-title').innerHTML = 'Preview';
+  document.querySelector('.plant-card__header-text').remove();
 
-    customizeBtn.removeEventListener('click', initCustomizeForm);
-    customizeBtn.innerHTML = 'Check availability';
-
-    await renderForm();
-    initFormValues();
-    formColorTrigger();
-    handleFormChanges();
-    renderVisualizer();
-  });
+  this.removeEventListener('click', initCustomizeForm);
+  this.innerHTML = 'Check availability';
+  await renderForm();
+  initFormValues();
+  formColorTrigger();
+  handleFormChanges();
+  renderVisualizer();
 }
 
 export { initCustomizeForm };

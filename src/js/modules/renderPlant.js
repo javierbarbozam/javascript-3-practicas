@@ -91,17 +91,17 @@ const plantPreview = (plant) => {
   return container;
 };
 
-const customizeBtn = () => {
+const customizeBtn = (cb) => {
   const container = document.querySelector('.plant');
   const btn = document.createElement('button');
   btn.classList.add('btn');
   btn.setAttribute('id', 'customize-btn');
   btn.innerHTML = 'Customize';
-  // btn.addEventListener('click', initCustomizeForm);
+  btn.addEventListener('click', cb);
   container.appendChild(btn);
 };
 
-const renderPlant = async (plant, btnTrigger) => {
+const renderPlant = (plant, cb) => {
   const container = document.querySelector('.plant-card');
   container.innerHTML = '';
   const title = plantTitle(plant);
@@ -112,8 +112,8 @@ const renderPlant = async (plant, btnTrigger) => {
   container.appendChild(images);
   container.appendChild(info);
 
-  if (btnTrigger === true) {
-    customizeBtn();
+  if (cb) {
+    customizeBtn(cb);
   }
 };
 
