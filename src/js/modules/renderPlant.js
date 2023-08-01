@@ -1,4 +1,4 @@
-import { initCustomizeForm } from '../customize-form.js';
+// import { initCustomizeForm } from '../customize-form.js';
 
 const plantTitle = (plant) => {
   const cardHeader = document.createElement('div');
@@ -95,12 +95,13 @@ const customizeBtn = () => {
   const container = document.querySelector('.plant');
   const btn = document.createElement('button');
   btn.classList.add('btn');
+  btn.setAttribute('id', 'customize-btn');
   btn.innerHTML = 'Customize';
-  btn.addEventListener('click', initCustomizeForm);
+  // btn.addEventListener('click', initCustomizeForm);
   container.appendChild(btn);
 };
 
-const renderPlant = (plant, btnTrigger) => {
+const renderPlant = async (plant, btnTrigger) => {
   const container = document.querySelector('.plant-card');
   container.innerHTML = '';
   const title = plantTitle(plant);

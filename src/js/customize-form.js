@@ -108,18 +108,22 @@ const handleFormChanges = () => {
   );
 };
 
-async function initCustomizeForm() {
-  document.querySelector('#plant-form').style.display = 'none';
-  document.querySelector('.plant-card__header-title').innerHTML = 'Preview';
-  document.querySelector('.plant-card__header-text').remove();
+function initCustomizeForm() {
+  const customizeBtn = document.getElementById('customize-btn');
+  customizeBtn.addEventListener('click', async () => {
+    document.querySelector('#plant-form').style.display = 'none';
+    document.querySelector('.plant-card__header-title').innerHTML = 'Preview';
+    document.querySelector('.plant-card__header-text').remove();
 
-  this.removeEventListener('click', initCustomizeForm);
-  this.innerHTML = 'Check availability';
-  await renderForm();
-  initFormValues();
-  formColorTrigger();
-  handleFormChanges();
-  renderVisualizer();
+    customizeBtn.removeEventListener('click', initCustomizeForm);
+    customizeBtn.innerHTML = 'Check availability';
+
+    await renderForm();
+    initFormValues();
+    formColorTrigger();
+    handleFormChanges();
+    renderVisualizer();
+  });
 }
 
 export { initCustomizeForm };
