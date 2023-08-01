@@ -17,7 +17,7 @@ const plantInfo = (plant) => {
   const addExtras = () => {
     let extrasHTML = '';
     plant.extras.forEach((element) => {
-      extrasHTML += `<p>${element}</p>`;
+      extrasHTML += `<p class="plant-card__extra">${element}</p>`;
     });
     return extrasHTML;
   };
@@ -26,19 +26,25 @@ const plantInfo = (plant) => {
     cardInfo.innerHTML = `
     <tr class="plant-card__info-item">
       <td class="plant-card__info-title">Name</td>
-      <td class="plant-card__info-text">${plant.name}</td>
+      <td id="card-plant-name" class="plant-card__info-text">${plant.name}</td>
     </tr>
     <tr class="plant-card__info-item">
       <td class="plant-card__info-title">Soil</td>
-      <td class="plant-card__info-text">${plant.soil} soil</td>
+      <td id="card-soil" class="plant-card__info-text">${plant.soil} soil</td>
+    </tr>
+    <tr class="plant-card__info-item">
+      <td class="plant-card__info-title">Color</td>
+      <td id="card-pot-color" class="plant-card__info-text">${
+        plant.potColor
+      }</td>
     </tr>
     <tr class="plant-card__info-item">
       <td class="plant-card__info-title">Pot</td>
-      <td class="plant-card__info-text">${plant.potDecoration} ${
-        plant.potMaterial
-      } pot</td>
+      <td id="card-pot-description" class="plant-card__info-text">${
+        plant.potDecoration
+      } ${plant.potMaterial} pot</td>
     </tr>
-    <tr class="plant-card__info-item">
+    <tr id="extras-container" class="plant-card__info-item">
       <td class="plant-card__info-title">Extras</td>
       <td class="plant-card__info-text">
         ${addExtras()}
@@ -48,15 +54,19 @@ const plantInfo = (plant) => {
     cardInfo.innerHTML = `
     <tr class="plant-card__info-item">
       <td class="plant-card__info-title">Name</td>
-      <td class="plant-card__info-text">${plant.name}</td>
+      <td id="card-plant-name" class="plant-card__info-text">${plant.name}</td>
     </tr>
     <tr class="plant-card__info-item">
       <td class="plant-card__info-title">Soil</td>
-      <td class="plant-card__info-text">${plant.soil} soil</td>
+      <td id="card-soil" class="plant-card__info-text">${plant.soil} soil</td>
+    </tr>
+    <tr class="plant-card__info-item">
+      <td class="plant-card__info-title">Color</td>
+      <td id="card-pot-color" class="plant-card__info-text">${plant.potColor}</td>
     </tr>
     <tr class="plant-card__info-item">
       <td class="plant-card__info-title">Pot</td>
-      <td class="plant-card__info-text">${plant.potDecoration} ${plant.potMaterial} pot</td>
+      <td id="card-pot-description" class="plant-card__info-text">${plant.potDecoration} ${plant.potMaterial} pot</td>
     </tr>`;
   }
 
@@ -69,7 +79,7 @@ const plantPreview = (plant) => {
   let images = `
   <img class="plant-card__preview plant-card__preview--plant" src="/src/assets/plants/plant-${plant.name}.png" alt="">
   <img class="plant-card__preview plant-card__preview--soil" src="/src/assets/soil/soil-${plant.soil}.png" alt="">
-  <img class="plant-card__preview plant-card__preview--pot" src="/src/assets/pots/${plant.potDecoration}-${plant.potMaterial}-pot.png" alt="">`;
+  <img class="plant-card__preview plant-card__preview--pot" src="/src/assets/pots/${plant.potMaterial}-${plant.potDecoration}-${plant.potColor}.png" alt="">`;
 
   if (plant.extras) {
     plant.extras.forEach((element) => {
@@ -90,7 +100,7 @@ const customizeBtn = () => {
   container.appendChild(btn);
 };
 
-const renderPlant = (plant) => {
+const renderPlant = (plant, btnTrigger) => {
   const container = document.querySelector('.plant-card');
   container.innerHTML = '';
   const title = plantTitle(plant);
@@ -101,7 +111,9 @@ const renderPlant = (plant) => {
   container.appendChild(images);
   container.appendChild(info);
 
-  customizeBtn();
+  if (btnTrigger === true) {
+    customizeBtn();
+  }
 };
 
 export { renderPlant };

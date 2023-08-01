@@ -5,7 +5,7 @@
       <input
         class="plant-form-input"
         type="radio"
-        name="pot-material"
+        name="potMaterial"
         id="clay"
         value="clay"
       />
@@ -13,7 +13,7 @@
       <input
         class="plant-form-input"
         type="radio"
-        name="pot-material"
+        name="potMaterial"
         id="ceramic"
         value="ceramic"
       />
@@ -26,59 +26,92 @@
       <input
         class="plant-form-input"
         type="checkbox"
-        name="pot-decoration-trigger"
+        name="potDecoration"
         id="pot-decoration-trigger"
       />
-      <label for="pot-decoration-trigger">No</label>
+      <label id="pot-decoration-trigger-label" for="pot-decoration-trigger">No</label>
     </div>
     <div class="plant-form-box">
       <legend class="plant-form-legend">Pot color</legend>
       <input
         class="plant-form-input"
         type="checkbox"
-        name="pot-color-trigger"
+        name="color_trigger"
         id="pot-color-trigger"
       />
-      <label for="pot-color-trigger">No</label>
-    </div>
-    <div>
-      <input
-        class="plant-form-input"
-        type="checkbox"
-        name="blue-pot"
-        id="blue-pot"
-        value="blue-pot"
-      />
-      <label for="blue-pot">Blue pot</label>
-      <input
-        class="plant-form-input"
-        type="checkbox"
-        name="red-pot"
-        id="red-pot"
-        value="red-pot"
-      />
-      <label for="red-pot">Red pot</label>
-      <input
-        class="plant-form-input"
-        type="checkbox"
-        name="green-pot"
-        id="green-pot"
-        value="green-pot"
-      />
-      <label for="red-pot">Green pot</label>
-      <input
-        class="plant-form-input"
-        type="checkbox"
-        name="purplee-pot"
-        id="purplee-pot"
-        value="purplee-pot"
-      />
-      <label for="red-pot">Purple pot</label>
+      <label id="pot-color-trigger-label" for="pot-color-trigger">No</label>
+      <div class="pot-color-container">
+        <input
+          class="plant-form-input"
+          type="radio"
+          name="potColor"
+          id="blue-pot"
+          value="blue"
+        />
+        <label for="blue-pot">Blue pot</label>
+        <input
+          class="plant-form-input"
+          type="radio"
+          name="potColor"
+          id="pink-pot"
+          value="pink"
+        />
+        <label for="pink-pot">Pink pot</label>
+        <input
+          class="plant-form-input"
+          type="radio"
+          name="potColor"
+          id="green-pot"
+          value="green"
+        />
+        <label for="green-pot">Green pot</label>
+        <input
+          class="plant-form-input"
+          type="radio"
+          name="potColor"
+          id="purple-pot"
+          value="purple"
+        />
+        <label for="purple-pot">Purple pot</label>
+      </div>
     </div>
   </fieldset>
   <fieldset class="plant-form-fieldset">
-    <legend class="plant-form-legend">Choose your plant:</legend>
-    <select name="plant" id="plant">
+    <legend class="plant-form-legend">Choose your soil:</legend>
+    <div class="plant-form-box">
+      <input
+        class="plant-form-input"
+        type="radio"
+        name="soilCustomize"
+        id="composted"
+        value="composted"
+      />
+      <label for="composted">Basic composted soil</label>
+    </div>
+    <div class="plant-form-box">
+      <input
+        class="plant-form-input"
+        type="radio"
+        name="soilCustomize"
+        id="fertilized"
+        value="fertilized"
+      />
+      <label for="fertilized">Premium fertilized soil</label>
+    </div>
+    <div class="plant-form-box">
+      <input
+        class="plant-form-input"
+        type="radio"
+        name="soilCustomize"
+        id="drainage"
+        value="drainage"
+      />
+      <label for="drainage">Easy drainage soil</label>
+    </div>
+  </fieldset>
+  <fieldset class="plant-form-fieldset">
+    <label class="plant-form-legend" for="new-plant-form">Choose your plant:</label>
+    <select name="name" id="new-plant-form">
       <option value="aglaonema">aglaonema</option>
       <option value="aloe-vera">aloe-vera</option>
       <option value="boston-fern">boston-fern</option>
@@ -94,7 +127,7 @@
       <input
         class="plant-form-input"
         type="checkbox"
-        name="extras"
+        name="extrasCustomize"
         id="moss-pole"
         value="moss-pole"
       />
@@ -104,7 +137,7 @@
       <input
         class="plant-form-input"
         type="checkbox"
-        name="extras"
+        name="extrasCustomize"
         id="pebbles"
         value="pebbles"
       />
@@ -114,7 +147,7 @@
       <input
         class="plant-form-input"
         type="checkbox"
-        name="extras"
+        name="extrasCustomize"
         id="mini-plants"
         value="mini-plants"
       />

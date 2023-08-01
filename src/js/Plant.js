@@ -31,7 +31,6 @@ class Plant {
 
   clayPot() {
     this.potMaterial = 'clay';
-    this.soil = 'drainage';
     return this;
   }
 
@@ -42,6 +41,11 @@ class Plant {
 
   addExtras(value) {
     this.extras = value;
+    return this;
+  }
+
+  setPotColor(value) {
+    this.potColor = value;
     return this;
   }
 }

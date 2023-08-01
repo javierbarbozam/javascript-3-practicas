@@ -1,11 +1,16 @@
 import { Plant } from '../Plant.js';
+import { Publisher } from '../Publisher.js';
 import { plantConfig } from '../plant-config.js';
+
+const userPlant = new Plant();
+const plantCardObserver = new Publisher();
 
 const getFormData = () => {
   return new Promise((resolve) => {
     const form = document.getElementById('plant-form');
     form.addEventListener('submit', (e) => {
       e.preventDefault();
+      document.querySelector('.plant-form-btn').style.display = 'none';
 
       const res = new FormData(e.target);
       const extras = [];
@@ -41,31 +46,37 @@ const setPlantName = (data) => {
 
 const PlantData = async () => {
   const data = await getFormData();
-  const plant = new Plant();
   const name = setPlantName(data);
 
-  plant.setName(name);
-  plant.lightQuantity(data.lightQuantity);
-  plant.soilType(data.soil);
-  plant.potStyle(data.pot_style);
+  userPlant.setName(name);
+  userPlant.lightQuantity(data.lightQuantity);
+  userPlant.soilType(data.soil);
+  userPlant.potStyle(data.pot_style);
+
+  if (data.pot_style === 'painted-decorated') {
+    userPlant.setPotColor('pink');
+    userPlant.potStyle('decorated');
+  } else {
+    userPlant.setPotColor('unpainted');
+    userPlant.potStyle(data.pot_style);
+  }
 
   if (data.toxic_plant === 'non_toxic') {
-    plant.withPets();
+    userPlant.withPets();
   } else {
-    plant.noPets();
+    userPlant.noPets();
   }
 
   if (data.watering === 'overwater') {
-    plant.clayPot();
+    userPlant.clayPot();
+    userPlant.soilType('drainage');
   } else {
-    plant.ceramicPot();
+    userPlant.ceramicPot();
   }
 
   if (data.extras.length) {
-    plant.addExtras(data.extras);
+    userPlant.addExtras(data.extras);
   }
-
-  return plant;
 };
 
-export { PlantData };
+export { userPlant, plantCardObserver, PlantData };
