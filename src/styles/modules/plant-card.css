@@ -82,6 +82,10 @@ td {
   padding: 2px 0;
 }
 
+td::first-letter {
+  text-transform: uppercase;
+}
+
 tbody {
   margin: 0 auto;
 }

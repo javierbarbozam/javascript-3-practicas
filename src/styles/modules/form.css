@@ -22,3 +22,11 @@
 .plant-form-input {
   accent-color: #7a5cfa;
 }
+
+.pot-color-container {
+  display: none;
+}
+
+.form-title {
+  color: rgb(79, 79, 79);
+}
