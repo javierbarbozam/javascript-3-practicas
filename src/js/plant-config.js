@@ -2,27 +2,27 @@ const plantConfig = {
   low_light: {
     toxic: {
       default: 'sansevieria',
-      overwater: 'peace-lily',
+      overwater: 'peaceLily',
     },
     non_toxic: {
-      default: 'boston-fern',
-      overwater: 'boston-fern',
+      default: 'fern',
+      overwater: 'fern',
     },
   },
   medium_light: {
     toxic: {
       default: 'aglaonema',
-      overwater: 'peace-lily',
+      overwater: 'peaceLily',
     },
     non_toxic: {
       default: 'monstera',
-      overwater: 'peace-lily',
+      overwater: 'peaceLily',
     },
   },
   outdoor: {
     toxic: {
-      default: 'aloe-vera',
-      overwater: 'aloe-vera',
+      default: 'aloe',
+      overwater: 'aloe',
     },
     non_toxic: {
       default: 'cactus',

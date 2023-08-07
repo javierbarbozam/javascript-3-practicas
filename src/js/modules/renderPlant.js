@@ -117,4 +117,4 @@ const renderPlant = (plant, cb) => {
   }
 };
 
-export { renderPlant };
+export { renderPlant, customizeBtn };

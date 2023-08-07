@@ -1,3 +1,4 @@
+import { handleAvailability } from './availability.js';
 import { plantCardObserver, userPlant } from './modules/getPlant.js';
 import { renderVisualizer } from './visualizer.js';
 
@@ -118,7 +119,8 @@ async function initCustomizeForm() {
   document.querySelector('.plant-card__header-text').remove();
 
   this.removeEventListener('click', initCustomizeForm);
-  this.innerHTML = 'Check availability';
+  this.addEventListener('click', handleAvailability);
+  this.innerHTML = 'Check availability >';
   await renderForm();
   initFormValues();
   formColorTrigger();
