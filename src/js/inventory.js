@@ -74,12 +74,12 @@ const getInventory = async (context, next) => {
   next();
 };
 
-const getAlerts = (context) => {
-  const {zeroStock, lowStock, withStock} = context.stock;
-};
+// const getAlerts = (context) => {
+//   const { zeroStock, lowStock, withStock } = context.stock;
+// };
 
 addMiddleware(getInventory);
-addMiddleware(getAlerts);
+// addMiddleware(getAlerts);
 
 const getOrderInfo = (product) => {
   execute(product);
