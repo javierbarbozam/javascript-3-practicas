@@ -1,0 +1,96 @@
+.availability-title {
+  margin-bottom: 20px;
+}
+
+.availability-message {
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  list-style: none;
+}
+
+.availability-message::first-letter {
+  text-transform: uppercase;
+}
+
+.availability-message--red {
+  background-color: rgb(255, 47, 0);
+  color: white;
+}
+
+.availability-message--yellow {
+  background-color: rgb(241, 202, 8);
+  color: black;
+}
+
+.availability-message--green {
+  background-color: rgb(19, 170, 29);
+  color: white;
+}
+
+.accordion-trigger {
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  background-color: transparent;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.availability-accordion {
+  border-bottom: 1px solid rgb(145, 145, 145);
+}
+
+.availability-accordion-item {
+  animation: accordion-out 0.2s ease-out;
+  display: flex;
+  display: none;
+  margin-bottom: 15px;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.availability-accordion-item li {
+  list-style: none;
+}
+
+.availability-accordion-item--visible {
+  animation: accordion-in 0.2s ease-in;
+  display: flex;
+}
+
+.availability-accordion-title {
+  display: inline-block;
+  min-width: 160px;
+}
+
+.availability-accordion-care-title {
+  font-weight: 700;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.availability-accordion-care-title::first-letter {
+  text-transform: uppercase;
+}
+
+@keyframes accordion-in {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+@keyframes accordion-out {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
+}
