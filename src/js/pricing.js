@@ -1,4 +1,4 @@
-const pricing = {
+const productPrice = {
   plants: {
     aglaonema: 12.99,
     aloe: 5.25,
@@ -10,16 +10,28 @@ const pricing = {
   },
   pots: {
     clay: {
-      simple: 3.0,
-      decorated: 4.0,
-      painted: 4.0,
-      paintedDecorated: 5.0,
+      simple_blue: 4.0,
+      simple_green: 4.0,
+      simple_pink: 4.0,
+      simple_purple: 4.0,
+      simple_unpainted: 3.0,
+      decorated_blue: 5.0,
+      decorated_green: 5.0,
+      decorated_pink: 5.0,
+      decorated_purple: 5.0,
+      decorated_unpainted: 4.0,
     },
     ceramic: {
-      simple: 5.0,
-      decorated: 6.0,
-      painted: 6.0,
-      paintedDecorated: 7.0,
+      simple_blue: 6.0,
+      simple_green: 6.0,
+      simple_pink: 6.0,
+      simple_purple: 6.0,
+      simple_unpainted: 5.0,
+      decorated_blue: 7.0,
+      decorated_green: 7.0,
+      decorated_pink: 7.0,
+      decorated_purple: 7.0,
+      decorated_unpainted: 6.0,
     },
   },
   soil: {
@@ -34,4 +46,4 @@ const pricing = {
   },
 };
 
-export { pricing };
+export { productPrice };
