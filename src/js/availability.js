@@ -3,6 +3,7 @@ import { getOrderInfo } from './inventory.js';
 
 const renderTitle = () => {
   const title = document.createElement('h2');
+  title.classList.add('availability-title');
   title.innerHTML = `Plant with ${userPlant.potDecoration} ${userPlant.potMaterial} pot and ${userPlant.soil} soil`;
   return title;
 };
@@ -12,11 +13,10 @@ const initAvailability = async () => {
   const section = document.createElement('section');
   section.classList.add('availability-wrapper');
 
-  getOrderInfo(userPlant);
-
   const title = renderTitle();
   section.appendChild(title);
   mainContainer.appendChild(section);
+  getOrderInfo(userPlant);
 };
 
 function handleAvailability() {
