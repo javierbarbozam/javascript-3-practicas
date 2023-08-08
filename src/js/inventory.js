@@ -26,6 +26,14 @@ const getInfo = async (product) => {
 };
 
 function accordionTrigger(item) {
+  const accordionItem = document.querySelectorAll(
+    '.availability-accordion-item',
+  );
+  accordionItem.forEach((element) => {
+    if (element.classList.contains('availability-accordion-item--visible')) {
+      element.classList.remove('availability-accordion-item--visible');
+    }
+  });
   item.classList.toggle('availability-accordion-item--visible');
 }
 
@@ -223,6 +231,15 @@ const pricing = (context, next) => {
 
   accordion.append(trigger, priceList);
   wrapper.append(accordion);
+
+  // Add price element
+  const pricePreview = document.createElement('span');
+  pricePreview.classList.add('availability-accordion-price-title');
+  pricePreview.innerHTML = `$${context.pricing.total.toFixed(2)}`;
+
+  document
+    .querySelector('.availability-title')
+    .insertAdjacentElement('afterend', pricePreview);
 
   // call next middleware
   next();
