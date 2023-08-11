@@ -77,13 +77,13 @@ const plantPreview = (plant) => {
   const container = document.createElement('div');
   container.classList.add('plant-card__preview');
   let images = `
-  <img class="plant-card__preview plant-card__preview--plant" src="/src/assets/plants/plant-${plant.name}.png" alt="">
-  <img class="plant-card__preview plant-card__preview--soil" src="/src/assets/soil/soil-${plant.soil}.png" alt="">
-  <img class="plant-card__preview plant-card__preview--pot" src="/src/assets/pots/${plant.potMaterial}-${plant.potDecoration}-${plant.potColor}.png" alt="">`;
+  <img class="plant-card__preview plant-card__preview--plant" src="./assets/plants/plant-${plant.name}.png" alt="">
+  <img class="plant-card__preview plant-card__preview--soil" src="./assets/soil/soil-${plant.soil}.png" alt="">
+  <img class="plant-card__preview plant-card__preview--pot" src="./assets/pots/${plant.potMaterial}-${plant.potDecoration}-${plant.potColor}.png" alt="">`;
 
   if (plant.extras) {
     plant.extras.forEach((element) => {
-      images += `<img class="plant-card__preview plant-card__preview--${element}" src="/src/assets/extra/${element}.png" alt="">`;
+      images += `<img class="plant-card__preview plant-card__preview--${element}" src="./assets/extra/${element}.png" alt="">`;
     });
   }
 
