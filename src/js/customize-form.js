@@ -1,10 +1,9 @@
 import { handleAvailability } from './availability.js';
 import { plantCardObserver, userPlant } from './modules/getPlant.js';
 import { renderVisualizer } from './visualizer.js';
-import formUrl from '../templates/customize-form.html';
 
 const renderForm = async () => {
-  await fetch(`${formUrl}`)
+  await fetch('./customize-form.html')
     .then((res) => res.text())
     .then((data) => {
       const container = document.querySelector('.plant-form-wrapper');
