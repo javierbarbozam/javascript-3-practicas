@@ -15,21 +15,14 @@ npm install
 Production mode:
 
 ```
-npm run build
+npm run wprod
 ```
 
-Development mode:
+Development mode (this will open a dev server):
 
 ```
-npm run dev
+npm run wdev
 ```
-
-Start a dev server:
-
-```
-npm run dev-server
-```
-
 ### ESlint:
 
 Check files:

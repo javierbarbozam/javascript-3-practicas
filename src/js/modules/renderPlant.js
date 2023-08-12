@@ -1,4 +1,5 @@
-// import { initCustomizeForm } from '../customize-form.js';
+// require.context('../../assets', true, /^.*\.png$/);
+require.context('/src/assets/', true, /^\.\/.*\.png/);
 
 const plantTitle = (plant) => {
   const cardHeader = document.createElement('div');
@@ -77,13 +78,13 @@ const plantPreview = (plant) => {
   const container = document.createElement('div');
   container.classList.add('plant-card__preview');
   let images = `
-  <img class="plant-card__preview plant-card__preview--plant" src="./assets/plants/plant-${plant.name}.png" alt="">
-  <img class="plant-card__preview plant-card__preview--soil" src="./assets/soil/soil-${plant.soil}.png" alt="">
-  <img class="plant-card__preview plant-card__preview--pot" src="./assets/pots/${plant.potMaterial}-${plant.potDecoration}-${plant.potColor}.png" alt="">`;
+  <img class="plant-card__preview plant-card__preview--plant" src="./assets/plant-${plant.name}.png" alt="">
+  <img class="plant-card__preview plant-card__preview--soil" src="./assets/soil-${plant.soil}.png" alt="">
+  <img class="plant-card__preview plant-card__preview--pot" src="./assets/${plant.potMaterial}-${plant.potDecoration}-${plant.potColor}.png" alt="">`;
 
   if (plant.extras) {
     plant.extras.forEach((element) => {
-      images += `<img class="plant-card__preview plant-card__preview--${element}" src="./assets/extra/${element}.png" alt="">`;
+      images += `<img class="plant-card__preview plant-card__preview--${element}" src="./assets/${element}.png" alt="">`;
     });
   }
 
