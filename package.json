@@ -4,14 +4,12 @@
   "description": "",
   "private": true,
   "scripts": {
-    "dev-server": "webpack server --mode development --open",
     "prettier-check": "prettier -c .",
     "prettier-fix": "prettier -w .",
     "eslint-check": "eslint . --ext .js",
     "eslint-fix": "eslint . --ext .js --fix",
     "wprod": "webpack --mode production",
-    "wdev": "webpack-dev-server --mode development --open",
-    "webpack": "webpack --config webpack.config.js"
+    "wdev": "webpack-dev-server --mode development --open"
   },
   "repository": {
     "type": "git",
