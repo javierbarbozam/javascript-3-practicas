@@ -1,5 +1,4 @@
-// require.context('../../assets', true, /^.*\.png$/);
-require.context('../../assets/', true, /^\.\/.*\.png/);
+require.context('../../assets/', true, /^\.\/.*\.png|\.\/.*\.PNG/);
 
 const plantTitle = (plant) => {
   const cardHeader = document.createElement('div');
